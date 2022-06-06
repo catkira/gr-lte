@@ -19,5 +19,6 @@ install(FILES
     sss_calculator_vcm.h
     sss_tagger_cc.h
     sss_symbol_selector_cvc.h
-    sync_frequency_c.h DESTINATION include/gnuradio/lte
+    sync_frequency_c.h
+    subblock_deinterleaver_vfvf.h DESTINATION include/gnuradio/lte
 )

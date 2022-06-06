@@ -13,5 +13,6 @@ install(FILES
     lte_sss_calculator_vcm.block.yml
     lte_sss_tagger_cc.block.yml
     lte_sss_symbol_selector_cvc.block.yml
-    lte_sync_frequency_c.block.yml DESTINATION share/gnuradio/grc/blocks
+    lte_sync_frequency_c.block.yml
+    lte_subblock_deinterleaver_vfvf.block.yml DESTINATION share/gnuradio/grc/blocks
 )

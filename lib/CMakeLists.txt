@@ -19,7 +19,8 @@ list(APPEND lte_sources
     sss_calculator_vcm_impl.cc
     sss_tagger_cc_impl.cc
     sss_symbol_selector_cvc_impl.cc
-    sync_frequency_c_impl.cc )
+    sync_frequency_c_impl.cc
+    subblock_deinterleaver_vfvf_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)
