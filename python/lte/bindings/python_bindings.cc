@@ -25,6 +25,7 @@ namespace py = pybind11;
     void bind_pss_symbol_selector_cvc(py::module& m);
     void bind_pss_calculator_vcm(py::module& m);
     void bind_extract_subcarriers_vcvc(py::module& m);
+    void bind_sss_calculator_vcm(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -57,5 +58,6 @@ PYBIND11_MODULE(lte_python, m)
     bind_pss_symbol_selector_cvc(m);
     bind_pss_calculator_vcm(m);
     bind_extract_subcarriers_vcvc(m);
+    bind_sss_calculator_vcm(m);
     // ) END BINDING_FUNCTION_CALLS
 }
