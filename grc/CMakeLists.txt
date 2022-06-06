@@ -17,5 +17,6 @@ install(FILES
     lte_subblock_deinterleaver_vfvf.block.yml
     lte_rough_symbol_sync_cc.block.yml
     lte_remove_cp_cvc.block.yml
-    lte_channel_estimator_vcvc.block.yml DESTINATION share/gnuradio/grc/blocks
+    lte_channel_estimator_vcvc.block.yml
+    lte_rs_map_generator_m.block.yml DESTINATION share/gnuradio/grc/blocks
 )

@@ -1,0 +1,25 @@
+id: lte_rs_map_generator_m
+label: rs_map_generator_m
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.rs_map_generator_m(${msg_buf_name_in}, ${msg_buf_name_out}, ${N_rb_dl}, ${ant_port}, ${name})
+parameters:
+- id: N_rb_dl
+  dtype: int
+  name: resource blocks
+- id: ant_port
+  dtype: int
+  name: antenna port
+inputs:
+- domain: message
+  id: msg_buf_name_in
+- domain: message
+  id: msg_buf_in
+outputs:
+- domain: message
+  id: msg_buf_name_out
+- domain: message
+  id: msg_buf_out
+file_format: 1
+
