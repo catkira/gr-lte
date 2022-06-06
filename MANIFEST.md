@@ -1,23 +1,17 @@
-title: gr-lte
-brief: LTE downlink receiver blocks
-tags:
-  - LTE
-  - synchronization
-  - estimation
-  - PBCH
+title: The LTE OOT Module
+brief: Short description of gr-lte
+tags: # Tags are arbitrary, but look at CGRAN what other authors are using
+  - sdr
 author:
-  - Johannes Demel <demel@ant.uni-bremen.de>
-  - Kristian Maier <uafye@student.kit.edu>
+  - Author Name <authors@email.address>
 copyright_owner:
-  - Johannes Demel <demel@ant.uni-bremen.de>
-  - Kristian Maier <uafye@student.kit.edu>
-dependencies:
-  - gnuradio (>= 3.7.0)
-repo: https://github.com/kit-cel/gr-lte
-stable_release: HEAD
-icon:
+  - Copyright Owner 1
+license:
+gr_supported_version: # Put a comma separated list of supported GR versions here
+#repo: # Put the URL of the repository here, or leave blank for default
+#website: <module_website> # If you have a separate project website, put it here
+#icon: <icon_url> # Put a URL to a square image here that will be used as an icon on CGRAN
 ---
-
-The *gr-lte* project is an Open Source Software Package which aims to provide a GNU Radio LTE Receiver to receive, synchronize and decode LTE signals. Its development was focused on modularity. This makes the project easy to extend and reuse its blocks.
-
-This project was initiated as a Bachelor thesis at the *Communication Engineering Lab (CEL)* at the *Karlsruhe Institute of Technology (KIT)*, Germany, <http://www.cel.kit.edu>.
+A longer, multi-line description of gr-lte.
+You may use some *basic* Markdown here.
+If left empty, it will try to find a README file instead.

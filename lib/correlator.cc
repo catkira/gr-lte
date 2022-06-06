@@ -23,7 +23,7 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include <lte/correlator.h>
+#include <gnuradio/lte/correlator.h>
 
 #include <cstdio>
 #include <cmath>
