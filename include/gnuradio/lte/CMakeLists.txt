@@ -21,5 +21,6 @@ install(FILES
     sss_symbol_selector_cvc.h
     sync_frequency_c.h
     subblock_deinterleaver_vfvf.h
-    rough_symbol_sync_cc.h DESTINATION include/gnuradio/lte
+    rough_symbol_sync_cc.h
+    remove_cp_cvc.h DESTINATION include/gnuradio/lte
 )

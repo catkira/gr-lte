@@ -21,7 +21,8 @@ list(APPEND lte_sources
     sss_symbol_selector_cvc_impl.cc
     sync_frequency_c_impl.cc
     subblock_deinterleaver_vfvf_impl.cc
-    rough_symbol_sync_cc_impl.cc )
+    rough_symbol_sync_cc_impl.cc
+    remove_cp_cvc_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)
