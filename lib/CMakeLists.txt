@@ -10,11 +10,10 @@
 # Setup library
 ########################################################################
 include(GrPlatform) #define LIB_SUFFIX
-
 list(APPEND lte_sources
     correlator.cc
     pss_tagger_impl.cc
-)
+    pss_symbol_selector_cvc_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)

@@ -5,7 +5,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-
 install(FILES
-    lte_pss_tagger.block.yml DESTINATION share/gnuradio/grc/blocks
+    lte_pss_tagger.block.yml
+    lte_pss_symbol_selector_cvc.block.yml DESTINATION share/gnuradio/grc/blocks
 )
