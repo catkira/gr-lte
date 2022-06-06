@@ -40,10 +40,10 @@ namespace gr {
         d_tag_id = pmt::string_to_symbol(this->name() );
         
         message_port_register_in(pmt::mp("lock"));
-		set_msg_handler(pmt::mp("lock"), boost::bind(&pss_symbol_selector_cvc_impl::handle_msg_lock, this, _1));
+		set_msg_handler(pmt::mp("lock"), [this](const pmt::pmt_t& msg){ handle_msg_lock(msg);});
 
         message_port_register_in(pmt::mp("half_frame"));
-		set_msg_handler(pmt::mp("half_frame"), boost::bind(&pss_symbol_selector_cvc_impl::handle_msg_half_frame_start, this, _1));        
+		set_msg_handler(pmt::mp("half_frame"), [this](const pmt::pmt_t& msg){ handle_msg_half_frame_start(msg);});        
     }
 
     /*
