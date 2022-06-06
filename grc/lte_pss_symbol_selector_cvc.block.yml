@@ -19,8 +19,6 @@ inputs:
   id: lock
 - domain: message
   id: half_frame
-- domain: message
-  id: lock
 outputs:
 - label: out
   domain: stream

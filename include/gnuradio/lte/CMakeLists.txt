@@ -22,5 +22,6 @@ install(FILES
     sync_frequency_c.h
     subblock_deinterleaver_vfvf.h
     rough_symbol_sync_cc.h
-    remove_cp_cvc.h DESTINATION include/gnuradio/lte
+    remove_cp_cvc.h
+    channel_estimator_vcvc.h DESTINATION include/gnuradio/lte
 )

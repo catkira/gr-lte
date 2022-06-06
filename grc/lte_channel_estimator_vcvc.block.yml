@@ -1,0 +1,41 @@
+id: lte_channel_estimator_vcvc
+label: channel estimator vcvc
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.channel_estimator_vcvc(${rxant}, ${subcarriers}, ${tag_key}, ${msg_buf_name},
+    ${pilot_carriers}, ${pilot_symbols}, ${name})
+parameters:
+- id: rxant
+  label: Rxant
+  dtype: int
+- id: subcarriers
+  label: Subcarriers
+  dtype: int
+- id: tag_key
+  label: Tag_key
+  dtype: string
+- id: msg_buf_name
+  label: Msg_buf_name
+  dtype: string
+- id: pilot_carriers
+  label: Pilot_carriers
+  dtype: raw
+- id: pilot_symbols
+  label: Pilot_symbols
+  dtype: raw
+- id: name
+  label: Name
+  default: ' "channel_estimator_vcvc"'
+  dtype: string
+inputs:
+- label: in
+  domain: stream
+  dtype: complex
+- domain: message
+  id: pilots
+outputs:
+- label: out
+  domain: stream
+  dtype: complex
+file_format: 1

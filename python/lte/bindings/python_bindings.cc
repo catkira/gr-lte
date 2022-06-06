@@ -32,6 +32,7 @@ namespace py = pybind11;
     void bind_subblock_deinterleaver_vfvf(py::module& m);
     void bind_rough_symbol_sync_cc(py::module& m);
     void bind_remove_cp_cvc(py::module& m);
+    void bind_channel_estimator_vcvc(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -71,5 +72,6 @@ PYBIND11_MODULE(lte_python, m)
     bind_subblock_deinterleaver_vfvf(m);
     bind_rough_symbol_sync_cc(m);
     bind_remove_cp_cvc(m);
+    bind_channel_estimator_vcvc(m);
     // ) END BINDING_FUNCTION_CALLS
 }

@@ -19,8 +19,8 @@ parameters:
   dtype: string
 inputs:
 - label: in
-  domain: complex
-  dtype: raw
+  domain: stream
+  dtype: complex
   vlen: '72'
 outputs:
 - domain: message

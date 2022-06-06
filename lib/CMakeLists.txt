@@ -22,7 +22,8 @@ list(APPEND lte_sources
     sync_frequency_c_impl.cc
     subblock_deinterleaver_vfvf_impl.cc
     rough_symbol_sync_cc_impl.cc
-    remove_cp_cvc_impl.cc )
+    remove_cp_cvc_impl.cc
+    channel_estimator_vcvc_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)

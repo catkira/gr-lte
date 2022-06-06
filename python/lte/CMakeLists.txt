@@ -50,3 +50,4 @@ GR_ADD_TEST(qa_sync_frequency_c ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}
 GR_ADD_TEST(qa_subblock_deinterleaver_vfvf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_subblock_deinterleaver_vfvf.py)
 GR_ADD_TEST(qa_rough_symbol_sync_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_rough_symbol_sync_cc.py)
 GR_ADD_TEST(qa_remove_cp_cvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_remove_cp_cvc.py)
+GR_ADD_TEST(qa_channel_estimator_vcvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_channel_estimator_vcvc.py)
