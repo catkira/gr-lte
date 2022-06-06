@@ -34,7 +34,8 @@ list(APPEND lte_python_files
     extract_subcarriers_vcvc_python.cc
     sss_calculator_vcm_python.cc
     sss_tagger_cc_python.cc
-    sss_symbol_selector_cvc_python.cc python_bindings.cc)
+    sss_symbol_selector_cvc_python.cc
+    sync_frequency_c_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(lte
    ../../..

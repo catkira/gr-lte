@@ -1,0 +1,10 @@
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1
+./include/gnuradio/lte/sync_frequency_c.hError occurred while running CASTXML:  status:1

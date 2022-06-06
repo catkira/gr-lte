@@ -18,5 +18,6 @@ install(FILES
     extract_subcarriers_vcvc.h
     sss_calculator_vcm.h
     sss_tagger_cc.h
-    sss_symbol_selector_cvc.h DESTINATION include/gnuradio/lte
+    sss_symbol_selector_cvc.h
+    sync_frequency_c.h DESTINATION include/gnuradio/lte
 )
