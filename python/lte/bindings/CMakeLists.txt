@@ -32,7 +32,8 @@ list(APPEND lte_python_files
     pss_symbol_selector_cvc_python.cc
     pss_calculator_vcm_python.cc
     extract_subcarriers_vcvc_python.cc
-    sss_calculator_vcm_python.cc python_bindings.cc)
+    sss_calculator_vcm_python.cc
+    sss_tagger_cc_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(lte
    ../../..

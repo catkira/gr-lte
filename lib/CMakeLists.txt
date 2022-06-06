@@ -16,7 +16,8 @@ list(APPEND lte_sources
     pss_symbol_selector_cvc_impl.cc
     pss_calculator_vcm_impl.cc
     extract_subcarriers_vcvc_impl.cc
-    sss_calculator_vcm_impl.cc )
+    sss_calculator_vcm_impl.cc
+    sss_tagger_cc_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)

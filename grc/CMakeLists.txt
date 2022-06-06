@@ -10,5 +10,6 @@ install(FILES
     lte_pss_symbol_selector_cvc.block.yml
     lte_pss_calculator_vcm.block.yml
     lte_extract_subcarriers_vcvc.block.yml
-    lte_sss_calculator_vcm.block.yml DESTINATION share/gnuradio/grc/blocks
+    lte_sss_calculator_vcm.block.yml
+    lte_sss_tagger_cc.block.yml DESTINATION share/gnuradio/grc/blocks
 )
