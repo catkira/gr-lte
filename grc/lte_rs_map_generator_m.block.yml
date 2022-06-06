@@ -13,13 +13,9 @@ parameters:
   name: antenna port
 inputs:
 - domain: message
-  id: msg_buf_name_in
-- domain: message
-  id: msg_buf_in
+  id: cell_id
 outputs:
 - domain: message
-  id: msg_buf_name_out
-- domain: message
-  id: msg_buf_out
+  id: pilots
 file_format: 1
 
