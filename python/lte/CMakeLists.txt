@@ -48,3 +48,4 @@ GR_ADD_TEST(qa_sss_tagger_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa
 GR_ADD_TEST(qa_sss_symbol_selector_cvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_sss_symbol_selector_cvc.py)
 GR_ADD_TEST(qa_sync_frequency_c ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_sync_frequency_c.py)
 GR_ADD_TEST(qa_subblock_deinterleaver_vfvf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_subblock_deinterleaver_vfvf.py)
+GR_ADD_TEST(qa_rough_symbol_sync_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_rough_symbol_sync_cc.py)

@@ -30,6 +30,7 @@ namespace py = pybind11;
     void bind_sss_symbol_selector_cvc(py::module& m);
     void bind_sync_frequency_c(py::module& m);
     void bind_subblock_deinterleaver_vfvf(py::module& m);
+    void bind_rough_symbol_sync_cc(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -67,5 +68,6 @@ PYBIND11_MODULE(lte_python, m)
     bind_sss_symbol_selector_cvc(m);
     bind_sync_frequency_c(m);
     bind_subblock_deinterleaver_vfvf(m);
+    bind_rough_symbol_sync_cc(m);
     // ) END BINDING_FUNCTION_CALLS
 }

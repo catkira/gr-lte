@@ -36,7 +36,8 @@ list(APPEND lte_python_files
     sss_tagger_cc_python.cc
     sss_symbol_selector_cvc_python.cc
     sync_frequency_c_python.cc
-    subblock_deinterleaver_vfvf_python.cc python_bindings.cc)
+    subblock_deinterleaver_vfvf_python.cc
+    rough_symbol_sync_cc_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(lte
    ../../..

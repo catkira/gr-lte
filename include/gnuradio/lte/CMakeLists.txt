@@ -20,5 +20,6 @@ install(FILES
     sss_tagger_cc.h
     sss_symbol_selector_cvc.h
     sync_frequency_c.h
-    subblock_deinterleaver_vfvf.h DESTINATION include/gnuradio/lte
+    subblock_deinterleaver_vfvf.h
+    rough_symbol_sync_cc.h DESTINATION include/gnuradio/lte
 )
