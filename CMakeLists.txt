@@ -88,18 +88,9 @@ find_package(CppUnit)
 find_package(FFTW3f)
 find_package(Volk)
 
-# To run a more advanced search for GNU Radio and it's components and
-# versions, use the following. Add any components required to the list
-# of GR_REQUIRED_COMPONENTS (in all caps) and change "version" to the
-# minimum API compatible version required.
-#
-# set(GR_REQUIRED_COMPONENTS RUNTIME BLOCKS FILTER ...)
-# find_package(Gnuradio "version")
+find_package(Gnuradio "3.9" REQUIRED COMPONENTS runtime filter fft blocks)
 
-set(GR_REQUIRED_COMPONENTS RUNTIME FILTER)
-find_package(Gnuradio "3.7.2" REQUIRED)
-
-if(NOT GNURADIO_RUNTIME_FOUND)
+if(NOT ${gnuradio-runtime_FOUND})
     message(FATAL_ERROR "GnuRadio Runtime and Filter required to compile lte")
 endif()
 if(NOT CPPUNIT_FOUND)
