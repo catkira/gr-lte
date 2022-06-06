@@ -30,13 +30,15 @@ namespace py = pybind11;
 void bind_pss_tagger_cc(py::module& m)
 {
 
-    using pss_tagger_cc    = gr::lte::pss_tagger_cc;
+    using pss_tagger_cc    = ::gr::lte::pss_tagger_cc;
 
 
     py::class_<pss_tagger_cc, gr::sync_block, gr::block, gr::basic_block,
         std::shared_ptr<pss_tagger_cc>>(m, "pss_tagger_cc", D(pss_tagger_cc))
 
         .def(py::init(&pss_tagger_cc::make),
+           py::arg("fftl"),
+           py::arg("name"),
            D(pss_tagger_cc,make)
         )
         

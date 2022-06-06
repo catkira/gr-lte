@@ -19,8 +19,8 @@ namespace gr {
      */
     sss_tagger_cc_impl::sss_tagger_cc_impl(int fftl, std::string name)
       : gr::sync_block("sss_tagger_cc",
-                gr::io_signature::make(1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
-                gr::io_signature::make(1 /* min outputs */, 1 /*max outputs */, sizeof(output_type))),
+                gr::io_signature::make(1, 1, sizeof(input_type)),
+                gr::io_signature::make(1, 1, sizeof(output_type))),
                 d_fftl(fftl),
                 d_cpl(144*fftl/2048),
                 d_cpl0(160*fftl/2048),
@@ -35,7 +35,7 @@ namespace gr {
         d_tag_id = pmt::string_to_symbol(this->name() );
         
         message_port_register_in(pmt::mp("frame_start"));
-		set_msg_handler(pmt::mp("frame_start"), boost::bind(&sss_tagger_cc_impl::handle_msg_frame_start, this, _1));        
+		set_msg_handler(pmt::mp("frame_start"), [this](const pmt::pmt_t& msg){ handle_msg_frame_start(msg);});        
     }
 
     /*

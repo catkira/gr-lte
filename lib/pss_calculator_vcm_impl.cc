@@ -22,8 +22,8 @@ namespace gr {
      */
     pss_calculator_vcm_impl::pss_calculator_vcm_impl(int fftl, std::string name)
       : gr::sync_block("pss_calculator_vcm",
-            gr::io_signature::make(1 /* min inputs */, 1 /* max inputs */, sizeof(input_type) * 72),
-            gr::io_signature::make(0 /* min outputs */, 0 /*max outputs */, 0)),
+            gr::io_signature::make(1, 1, sizeof(input_type) * 72),
+            gr::io_signature::make(0, 0, 0)),
             d_fftl(fftl),
             d_cpl(144*fftl/2048),
             d_cpl0(160*fftl/2048),

@@ -21,8 +21,8 @@ namespace gr {
      */
     rough_symbol_sync_cc_impl::rough_symbol_sync_cc_impl(int fftl, int vlen, std::string name)
       : gr::sync_block("rough_symbol_sync_cc",
-                gr::io_signature::make(1 /* min inputs */, 1 /* max inputs */, sizeof(input_type) * vlen),
-                gr::io_signature::make(1 /* min outputs */, 1 /*max outputs */, sizeof(output_type) * vlen)),
+                gr::io_signature::make(1, 1, sizeof(input_type) * vlen),
+                gr::io_signature::make(1, 1, sizeof(output_type) * vlen)),
                 d_fftl(fftl),
                 d_cpl(144*fftl/2048),
                 d_cpl0(160*fftl/2048),

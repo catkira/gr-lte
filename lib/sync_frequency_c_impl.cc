@@ -20,7 +20,7 @@ namespace gr {
      */
     sync_frequency_c_impl::sync_frequency_c_impl(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, std::string name)
       : gr::sync_block("sync_frequency_c",
-                gr::io_signature::make(1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
+                gr::io_signature::make(1, 1, sizeof(input_type)),
                 gr::io_signature::make(0, 0, 0)),
                 d_sig(sig),
                 d_fftl(fftl),

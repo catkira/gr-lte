@@ -19,8 +19,8 @@ namespace gr {
      */
     extract_subcarriers_vcvc_impl::extract_subcarriers_vcvc_impl(int N_rb_dl, int fftl, std::string name)
       : gr::sync_block("extract_subcarriers_vcvc",
-                gr::io_signature::make(1 /* min inputs */, 1 /* max inputs */, sizeof(input_type) * fftl),
-                gr::io_signature::make(1 /* min outputs */, 1 /*max outputs */, sizeof(output_type) * 12 * N_rb_dl)),
+                gr::io_signature::make(1, 1, sizeof(input_type) * fftl),
+                gr::io_signature::make(1, 1, sizeof(output_type) * 12 * N_rb_dl)),
                 d_N_rb_dl(N_rb_dl),
                 d_fftl(fftl)              
     {}

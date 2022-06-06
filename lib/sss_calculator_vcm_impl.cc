@@ -19,8 +19,8 @@ namespace gr {
      */
     sss_calculator_vcm_impl::sss_calculator_vcm_impl(int fftl, std::string key_id, std::string key_offset, std::string name)
       : gr::sync_block("sss_calculator_vcm",
-                gr::io_signature::make(1 /* min inputs */, 1 /* max inputs */, sizeof(input_type) * 72),
-                gr::io_signature::make(0 /* min outputs */, 0 /*max outputs */, 0)),
+                gr::io_signature::make(1, 1, sizeof(input_type) * 72),
+                gr::io_signature::make(0, 0, 0)),
                 d_N_id_2(-1),
                 d_cell_id(-1),
                 d_fftl(fftl),
