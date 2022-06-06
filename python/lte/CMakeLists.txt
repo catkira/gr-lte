@@ -42,3 +42,4 @@ add_custom_target(
 GR_ADD_TEST(qa_pss_tagger ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pss_tagger.py)
 GR_ADD_TEST(qa_pss_symbol_selector_cvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pss_symbol_selector_cvc.py)
 GR_ADD_TEST(qa_pss_calculator_vcm ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pss_calculator_vcm.py)
+GR_ADD_TEST(qa_extract_subcarriers_vcvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_extract_subcarriers_vcvc.py)
