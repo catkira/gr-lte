@@ -12,7 +12,7 @@
 install(FILES
     api.h
     correlator.h
-    pss_tagger.h
+    pss_tagger_cc.h
     pss_symbol_selector_cvc.h
     pss_calculator_vcm.h
     extract_subcarriers_vcvc.h

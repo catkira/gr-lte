@@ -13,8 +13,8 @@
 /* If manual edits are made, the following tags should be modified accordingly.    */
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
-/* BINDTOOL_HEADER_FILE(pss_tagger.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(3394d092e731e4e83d06f87a6478806e)                     */
+/* BINDTOOL_HEADER_FILE(pss_tagger_cc.h)                                        */
+/* BINDTOOL_HEADER_FILE_HASH(bd836b89f8571aed0646a9cb6356680e)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,21 +23,21 @@
 
 namespace py = pybind11;
 
-#include <gnuradio/lte/pss_tagger.h>
+#include <gnuradio/lte/pss_tagger_cc.h>
 // pydoc.h is automatically generated in the build directory
-#include <pss_tagger_pydoc.h>
+#include <pss_tagger_cc_pydoc.h>
 
-void bind_pss_tagger(py::module& m)
+void bind_pss_tagger_cc(py::module& m)
 {
 
-    using pss_tagger    = gr::lte::pss_tagger;
+    using pss_tagger_cc    = gr::lte::pss_tagger_cc;
 
 
-    py::class_<pss_tagger, gr::sync_block, gr::block, gr::basic_block,
-        std::shared_ptr<pss_tagger>>(m, "pss_tagger", D(pss_tagger))
+    py::class_<pss_tagger_cc, gr::sync_block, gr::block, gr::basic_block,
+        std::shared_ptr<pss_tagger_cc>>(m, "pss_tagger_cc", D(pss_tagger_cc))
 
-        .def(py::init(&pss_tagger::make),
-           D(pss_tagger,make)
+        .def(py::init(&pss_tagger_cc::make),
+           D(pss_tagger_cc,make)
         )
         
 

@@ -16,12 +16,12 @@
 
 
  
- static const char *__doc_gr_lte_pss_tagger = R"doc()doc";
+ static const char *__doc_gr_lte_pss_tagger_cc = R"doc()doc";
 
 
- static const char *__doc_gr_lte_pss_tagger_pss_tagger = R"doc()doc";
+ static const char *__doc_gr_lte_pss_tagger_cc_pss_tagger_cc = R"doc()doc";
 
 
- static const char *__doc_gr_lte_pss_tagger_make = R"doc()doc";
+ static const char *__doc_gr_lte_pss_tagger_cc_make = R"doc()doc";
 
   

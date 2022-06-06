@@ -6,17 +6,17 @@
  */
 
 #include <gnuradio/io_signature.h>
-#include "pss_tagger_impl.h"
+#include "pss_tagger_cc_impl.h"
 
 namespace gr {
   namespace lte {
 
     using input_type = gr_complex;
     using output_type = gr_complex;
-    pss_tagger::sptr
-    pss_tagger::make(int fftl, std::string& name)
+    pss_tagger_cc::sptr
+    pss_tagger_cc::make(int fftl, std::string& name)
     {
-      return gnuradio::make_block_sptr<pss_tagger_impl>(
+      return gnuradio::make_block_sptr<pss_tagger_cc_impl>(
         fftl, name);
     }
 
@@ -24,8 +24,8 @@ namespace gr {
     /*
      * The private constructor
      */
-    pss_tagger_impl::pss_tagger_impl(int fftl, std::string& name)
-      : gr::sync_block("pss_tagger",
+    pss_tagger_cc_impl::pss_tagger_cc_impl(int fftl, std::string& name)
+      : gr::sync_block("pss_tagger_cc",
                 gr::io_signature::make(1 /* min inputs */, 1 /* max inputs */, sizeof(input_type)),
                 gr::io_signature::make(1 /* min outputs */, 1 /*max outputs */, sizeof(output_type))),
                 d_fftl(fftl),
@@ -43,36 +43,36 @@ namespace gr {
         d_id_key = pmt::string_to_symbol("N_id_2");
         
         message_port_register_in(pmt::mp("lock"));
-		set_msg_handler(pmt::mp("lock"), boost::bind(&pss_tagger_impl::handle_msg_lock, this, _1));
+		set_msg_handler(pmt::mp("lock"), boost::bind(&pss_tagger_cc_impl::handle_msg_lock, this, _1));
 
         message_port_register_in(pmt::mp("half_frame"));
-		set_msg_handler(pmt::mp("half_frame"), boost::bind(&pss_tagger_impl::handle_msg_half_frame_start, this, _1));
+		set_msg_handler(pmt::mp("half_frame"), boost::bind(&pss_tagger_cc_impl::handle_msg_half_frame_start, this, _1));
 
         message_port_register_in(pmt::mp("N_id_2"));
-		set_msg_handler(pmt::mp("N_id_2"), boost::bind(&pss_tagger_impl::handle_msg_N_id_2, this, _1));        
+		set_msg_handler(pmt::mp("N_id_2"), boost::bind(&pss_tagger_cc_impl::handle_msg_N_id_2, this, _1));        
     }
 
     /*
      * Our virtual destructor.
      */
-    pss_tagger_impl::~pss_tagger_impl()
+    pss_tagger_cc_impl::~pss_tagger_cc_impl()
     {
     }
     
     void
-    pss_tagger_impl::handle_msg_N_id_2(pmt::pmt_t msg)
+    pss_tagger_cc_impl::handle_msg_N_id_2(pmt::pmt_t msg)
     {
         set_N_id_2( (int) pmt::to_long(msg) );
     }
     
     void
-    pss_tagger_impl::handle_msg_half_frame_start(pmt::pmt_t msg)
+    pss_tagger_cc_impl::handle_msg_half_frame_start(pmt::pmt_t msg)
     {
         set_half_frame_start(pmt::to_long(msg) );
     }
     
     void
-    pss_tagger_impl::handle_msg_lock(pmt::pmt_t msg)
+    pss_tagger_cc_impl::handle_msg_lock(pmt::pmt_t msg)
     {
         if(msg == pmt::PMT_T)
         {
@@ -84,7 +84,7 @@ namespace gr {
     }
     
     int
-    pss_tagger_impl::work(int noutput_items,
+    pss_tagger_cc_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {

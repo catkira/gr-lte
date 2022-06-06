@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 install(FILES
-    lte_pss_tagger.block.yml
+    lte_pss_tagger_cc.block.yml
     lte_pss_symbol_selector_cvc.block.yml
     lte_pss_calculator_vcm.block.yml
     lte_extract_subcarriers_vcvc.block.yml

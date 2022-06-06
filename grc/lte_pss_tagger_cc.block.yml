@@ -1,10 +1,10 @@
-id: lte_pss_tagger
-label: pss_tagger
+id: lte_pss_tagger_cc
+label: pss_tagger_cc
 category: '[lte]'
 
 templates:
   imports: from gnuradio import lte
-  make: lte.pss_tagger(${fftl}, ${name})
+  make: lte.pss_tagger_cc(${fftl}, ${name})
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -16,7 +16,7 @@ parameters:
 - id: parametername_replace_me
   label: FIX ME:
   dtype: string
-  default: You need to fill in your grc/lte_pss_tagger.block.yaml
+  default: You need to fill in your grc/lte_pss_tagger_cc.block.yaml
 #- id: ...
 #  label: ...
 #  dtype: ...

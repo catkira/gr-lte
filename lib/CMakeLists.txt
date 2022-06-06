@@ -12,7 +12,7 @@
 include(GrPlatform) #define LIB_SUFFIX
 list(APPEND lte_sources
     correlator.cc
-    pss_tagger_impl.cc
+    pss_tagger_cc_impl.cc
     pss_symbol_selector_cvc_impl.cc
     pss_calculator_vcm_impl.cc
     extract_subcarriers_vcvc_impl.cc

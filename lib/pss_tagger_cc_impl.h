@@ -5,15 +5,15 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-#ifndef INCLUDED_LTE_PSS_TAGGER_IMPL_H
-#define INCLUDED_LTE_PSS_TAGGER_IMPL_H
+#ifndef INCLUDED_LTE_PSS_TAGGER_CC_IMPL_H
+#define INCLUDED_LTE_PSS_TAGGER_CC_IMPL_H
 
-#include <gnuradio/lte/pss_tagger.h>
+#include <gnuradio/lte/pss_tagger_cc.h>
 
 namespace gr {
   namespace lte {
 
-    class pss_tagger_impl : public pss_tagger
+    class pss_tagger_cc_impl : public pss_tagger_cc
     {
     private:
         int d_fftl;
@@ -32,8 +32,8 @@ namespace gr {
         void handle_msg_half_frame_start(pmt::pmt_t msg);
         void handle_msg_N_id_2(pmt::pmt_t msg);        
     public:
-        pss_tagger_impl(int fftl, std::string& name);
-        ~pss_tagger_impl();
+        pss_tagger_cc_impl(int fftl, std::string& name);
+        ~pss_tagger_cc_impl();
 
         // Where all the action really happens
         int work(
@@ -50,4 +50,4 @@ namespace gr {
   } // namespace lte
 } // namespace gr
 
-#endif /* INCLUDED_LTE_PSS_TAGGER_IMPL_H */
+#endif /* INCLUDED_LTE_PSS_TAGGER_CC_IMPL_H */

@@ -17,7 +17,7 @@ except ImportError:
     sys.path.append(os.path.join(dirname, "bindings"))
     from gnuradio.lte import pss_tagger
 
-class qa_pss_tagger(gr_unittest.TestCase):
+class qa_pss_tagger_cc(gr_unittest.TestCase):
 
     def setUp(self):
         self.tb = gr.top_block()
@@ -36,4 +36,4 @@ class qa_pss_tagger(gr_unittest.TestCase):
 
 
 if __name__ == '__main__':
-    gr_unittest.run(qa_pss_tagger)
+    gr_unittest.run(qa_pss_tagger_cc)
