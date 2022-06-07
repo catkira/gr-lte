@@ -1,0 +1,265 @@
+options:
+  parameters:
+    author: Johannes Demel
+    catch_exceptions: 'True'
+    category: lte
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: hierarchical block including blocks for LTE SSS synchronization.
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: hb
+    hier_block_src_path: '.:'
+    id: lte_sss_sync
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: LTE SSS Sync
+    window_size: 1920,1080
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [10, 10]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: N_rb_dl
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: resource blocks
+    short_id: ''
+    type: intx
+    value: '50'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 10]
+    rotation: 0
+    state: enabled
+- name: fftlen
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: FFT length
+    short_id: ''
+    type: intx
+    value: '2048'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [194, 10]
+    rotation: 0
+    state: enabled
+- name: group_key
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Cell ID group key
+    short_id: ''
+    type: ''
+    value: '"N_id_2"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [441, 11]
+    rotation: 0
+    state: enabled
+- name: offset_key
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: offset marker key
+    short_id: ''
+    type: ''
+    value: '"offset_marker"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [585, 11]
+    rotation: 0
+    state: enabled
+- name: pad_sink_0
+  id: pad_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: out
+    num_streams: '1'
+    optional: 'False'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1338, 169]
+    rotation: 0
+    state: enabled
+- name: pad_sink_0_0
+  id: pad_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: cell_id
+    num_streams: '1'
+    optional: 'True'
+    type: message
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1322, 243]
+    rotation: 0
+    state: enabled
+- name: pad_source_0
+  id: pad_source
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: in
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '1'
+    optional: 'False'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [15, 152]
+    rotation: 0
+    state: enabled
+- name: sync_sss_calculator_vcm_0
+  id: lte_sss_calculator_vcm
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    fftl: fftlen
+    key_id: ''
+    key_offset: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 210]
+    rotation: 0
+    state: enabled
+- name: sync_sss_extract_subcarriers_vcvc_0
+  id: lte_extract_subcarriers_vcvc
+  parameters:
+    N_rb_dl: '6'
+    affinity: ''
+    alias: ''
+    comment: ''
+    fftl: fftlen
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [611, 218]
+    rotation: 0
+    state: enabled
+- name: sync_sss_fft_vxx_0
+  id: fft_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    fft_size: fftlen
+    forward: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    nthreads: '1'
+    shift: 'False'
+    type: complex
+    window: window.rectangular(fftlen)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [381, 194]
+    rotation: 0
+    state: enabled
+- name: sync_sss_symbol_selector_cvc_0
+  id: lte_sss_symbol_selector_cvc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    fftl: fftlen
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [181, 226]
+    rotation: 0
+    state: enabled
+- name: sync_sss_tagger_cc_0
+  id: lte_sss_tagger_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    fftl: fftlen
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1153, 156]
+    rotation: 0
+    state: enabled
+
+connections:
+- [pad_source_0, '0', sync_sss_symbol_selector_cvc_0, '0']
+- [pad_source_0, '0', sync_sss_tagger_cc_0, '0']
+- [sync_sss_calculator_vcm_0, cell_id, pad_sink_0_0, in]
+- [sync_sss_calculator_vcm_0, frame_start, sync_sss_tagger_cc_0, frame_start]
+- [sync_sss_extract_subcarriers_vcvc_0, '0', sync_sss_calculator_vcm_0, '0']
+- [sync_sss_fft_vxx_0, '0', sync_sss_extract_subcarriers_vcvc_0, '0']
+- [sync_sss_symbol_selector_cvc_0, '0', sync_sss_fft_vxx_0, '0']
+- [sync_sss_tagger_cc_0, '0', pad_sink_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: v3.11.0.0git-128-gfa8953de
