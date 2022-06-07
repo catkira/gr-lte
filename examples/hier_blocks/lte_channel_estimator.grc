@@ -172,7 +172,7 @@ blocks:
   parameters:
     alias: ''
     comment: ''
-    imports: import lte
+    imports: from gnuradio import lte
   states:
     bus_sink: false
     bus_source: false
@@ -216,7 +216,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [520, 163]
+    coordinate: [512, 196.0]
     rotation: 0
     state: enabled
 - name: lte_channel_estimator_vcvc_0_0
@@ -238,7 +238,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [520, 275]
+    coordinate: [560, 364.0]
     rotation: 0
     state: enabled
 - name: ofdm_estimator_lte_rs_map_generator_m_0

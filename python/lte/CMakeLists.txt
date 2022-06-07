@@ -22,6 +22,7 @@ add_subdirectory(bindings)
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
+    utils.py
     rs_map_generator_m.py DESTINATION ${GR_PYTHON_DIR}/gnuradio/lte
 )
 
