@@ -39,7 +39,9 @@ list(APPEND lte_python_files
     subblock_deinterleaver_vfvf_python.cc
     rough_symbol_sync_cc_python.cc
     remove_cp_cvc_python.cc
-    channel_estimator_vcvc_python.cc python_bindings.cc)
+    channel_estimator_vcvc_python.cc
+    pbch_demux_vcvc_python.cc
+    pre_decoder_vcvc_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(lte
    ../../..

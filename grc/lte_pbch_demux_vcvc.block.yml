@@ -1,0 +1,30 @@
+id: lte_pbch_demux_vcvc
+label: pbch demux vcvc
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.pbch_demux_vcvc(${N_rb_dl}, ${rxant}, ${name})
+parameters:
+- id: N_rb_dl
+  label: resource blocks
+  dtype: int
+- id: rxant
+  label: RX antennas
+  dtype: int
+- id: name
+  label: Name
+  default: ' "pbch_demux_vcvc"'
+  dtype: string
+inputs:
+- label: in
+  domain: stream
+  dtype: complex
+  vlen: ${ 12 * N_rb_dl * rxant }
+- domain: message
+  id: cell_id
+outputs:
+- label: out
+  domain: stream
+  dtype: complex
+  vlen: ${ 240 * rxant }
+file_format: 1

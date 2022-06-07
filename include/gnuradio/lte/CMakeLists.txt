@@ -23,5 +23,7 @@ install(FILES
     subblock_deinterleaver_vfvf.h
     rough_symbol_sync_cc.h
     remove_cp_cvc.h
-    channel_estimator_vcvc.h DESTINATION include/gnuradio/lte
+    channel_estimator_vcvc.h
+    pbch_demux_vcvc.h
+    pre_decoder_vcvc.h DESTINATION include/gnuradio/lte
 )

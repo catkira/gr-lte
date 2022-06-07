@@ -23,7 +23,9 @@ list(APPEND lte_sources
     rough_symbol_sync_cc_impl.cc
     remove_cp_cvc_impl.cc
     channel_estimator_vcvc_impl.cc
-    pss_tagger_cc_impl.cc )
+    pss_tagger_cc_impl.cc
+    pbch_demux_vcvc_impl.cc
+    pre_decoder_vcvc_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)
