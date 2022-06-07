@@ -7,7 +7,7 @@ class rs_map_generator_m(gr.sync_block):
     """
     def __init__(self, msg_buf_name_in, msg_buf_name_out, N_rb_dl, ant_port, name = "rs_map_generator_m"):
         gr.sync_block.__init__(self,
-            name="rs_map_generator_m",
+            name=name,
             in_sig=None,
             out_sig=None)
             
