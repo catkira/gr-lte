@@ -19,8 +19,10 @@ inputs:
 - label: in
   domain: stream
   dtype: float
+  vlen: ${ num_groups * items_per_group }
 outputs:
 - label: out
   domain: stream
   dtype: float
+  vlen: ${ num_groups * items_per_group }
 file_format: 1

@@ -39,6 +39,9 @@ namespace py = pybind11;
     void bind_qpsk_soft_demod_vcvf(py::module& m);
     void bind_pbch_descrambler_vfvf(py::module& m);
     void bind_repeat_message_source_vf(py::module& m);
+    void bind_crc_check_vbvb(py::module& m);
+    void bind_bch_crc_check_ant_chooser_bb(py::module& m);
+    void bind_mib_unpack_vbm(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -85,5 +88,8 @@ PYBIND11_MODULE(lte_python, m)
     bind_qpsk_soft_demod_vcvf(m);
     bind_pbch_descrambler_vfvf(m);
     bind_repeat_message_source_vf(m);
+    bind_crc_check_vbvb(m);
+    bind_bch_crc_check_ant_chooser_bb(m);
+    bind_mib_unpack_vbm(m);
     // ) END BINDING_FUNCTION_CALLS
 }

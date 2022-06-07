@@ -1,0 +1,33 @@
+id: lte_crc_check_vbvb
+label: Check CRC16
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.crc_check_vbvb(${data_len}, ${final_xor}, ${name})
+parameters:
+- id: data_len
+  label: payload length
+  dtype: int
+- id: final_xor
+  label: final XOR
+  dtype: int
+- id: name
+  label: Name
+  default: ' "crc_check_vbvb"'
+  dtype: string
+inputs:
+- label: in
+  domain: stream
+  dtype: byte
+  vlen: ${ (data_len+16) }
+  multiplicity: 1
+outputs:
+- label: data
+  domain: stream
+  dtype: byte
+  vlen: ${ data_len }
+- label: check
+  domain: stream
+  dtype: byte
+  multiplicity: 1
+file_format: 1

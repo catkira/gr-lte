@@ -29,5 +29,8 @@ install(FILES
     layer_demapper_vcvc.h
     qpsk_soft_demod_vcvf.h
     pbch_descrambler_vfvf.h
-    repeat_message_source_vf.h DESTINATION include/gnuradio/lte
+    repeat_message_source_vf.h
+    crc_check_vbvb.h
+    bch_crc_check_ant_chooser_bb.h
+    mib_unpack_vbm.h DESTINATION include/gnuradio/lte
 )

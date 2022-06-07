@@ -23,7 +23,8 @@ GR_PYTHON_INSTALL(
     FILES
     __init__.py
     utils.py
-    pbch_scramble_sequencer_m.py    
+    pbch_scramble_sequencer_m.py
+    bch_viterbi_vfvb.py
     rs_map_generator_m.py DESTINATION ${GR_PYTHON_DIR}/gnuradio/lte
 )
 
@@ -60,3 +61,6 @@ GR_ADD_TEST(qa_layer_demapper_vcvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_D
 GR_ADD_TEST(qa_qpsk_soft_demod_vcvf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_qpsk_soft_demod_vcvf.py)
 GR_ADD_TEST(qa_pbch_descrambler_vfvf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pbch_descrambler_vfvf.py)
 GR_ADD_TEST(qa_repeat_message_source_vf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_repeat_message_source_vf.py)
+GR_ADD_TEST(qa_crc_check_vbvb ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_crc_check_vbvb.py)
+GR_ADD_TEST(qa_bch_crc_check_ant_chooser_bb ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_bch_crc_check_ant_chooser_bb.py)
+GR_ADD_TEST(qa_mib_unpack_vbm ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_mib_unpack_vbm.py)

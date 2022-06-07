@@ -45,7 +45,10 @@ list(APPEND lte_python_files
     layer_demapper_vcvc_python.cc
     qpsk_soft_demod_vcvf_python.cc
     pbch_descrambler_vfvf_python.cc
-    repeat_message_source_vf_python.cc python_bindings.cc)
+    repeat_message_source_vf_python.cc
+    crc_check_vbvb_python.cc
+    bch_crc_check_ant_chooser_bb_python.cc
+    mib_unpack_vbm_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(lte
    ../../..

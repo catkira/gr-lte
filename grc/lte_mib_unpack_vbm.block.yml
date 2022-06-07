@@ -1,0 +1,36 @@
+id: lte_mib_unpack_vbm
+label: Unpack MIB
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.mib_unpack_vbm(${name})
+parameters:
+- id: name
+  label: Name
+  default: ' "mib_unpack_vbm"'
+  dtype: string
+inputs:
+- label: mib
+  domain: stream
+  dtype: byte
+  vlen: '24'
+- label: N_ant
+  domain: stream
+  dtype: byte
+outputs:
+- domain: message
+  id: SFN
+  optional: 1
+- domain: message
+  id: N_ant
+  optional: 1
+- domain: message
+  id: N_rb_dl
+  optional: 1
+- domain: message
+  id: phich_duration
+  optional: 1
+- domain: message
+  id: phich_ressources
+  optional: 1
+file_format: 1

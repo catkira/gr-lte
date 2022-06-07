@@ -29,7 +29,10 @@ list(APPEND lte_sources
     layer_demapper_vcvc_impl.cc
     qpsk_soft_demod_vcvf_impl.cc
     pbch_descrambler_vfvf_impl.cc
-    repeat_message_source_vf_impl.cc )
+    repeat_message_source_vf_impl.cc
+    crc_check_vbvb_impl.cc
+    bch_crc_check_ant_chooser_bb_impl.cc
+    mib_unpack_vbm_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)
@@ -38,6 +41,7 @@ if(NOT lte_sources)
 endif(NOT lte_sources)
 
 list(APPEND lte_libs
+    ${Boost_LIBRARIES}
     ${VOLK_LIBRARIES}
     ${FFTW3F_LIBRARIES}
 )

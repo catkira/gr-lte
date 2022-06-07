@@ -22,5 +22,6 @@ except ModuleNotFoundError:
 # import any pure python here
 from .rs_map_generator import rs_map_generator
 from .pbch_scramble_sequencer_m import pbch_scramble_sequencer_m
+from .bch_viterbi_vfvb import bch_viterbi_vfvb
 from .utils import *
 #

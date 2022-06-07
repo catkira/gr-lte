@@ -1,0 +1,30 @@
+id: lte_bch_crc_check_ant_chooser_bb
+label: BCH CRC antenna selector
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.bch_crc_check_ant_chooser_bb(${name})
+parameters:
+- id: name
+  label: Name
+  default: ' "bch_crc_check_ant_chooser_bb"'
+  dtype: string
+inputs:
+- label: in1
+  domain: stream
+  dtype: byte
+  multiplicity: 1
+- label: in2
+  domain: stream
+  dtype: byte
+  multiplicity: 1
+- label: in4
+  domain: stream
+  dtype: byte
+  multiplicity: 1
+outputs:
+- label: N_ant
+  domain: stream
+  dtype: byte
+  multiplicity: 1
+file_format: 1

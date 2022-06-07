@@ -268,7 +268,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [32, 363]
+    coordinate: [24, 644.0]
     rotation: 0
     state: enabled
 - name: pbch_blocks_interleave_0

@@ -113,11 +113,12 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
+    name: ' "mib_unpack_vbm"'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1096, 361]
+    coordinate: [1192, 384.0]
     rotation: 0
     state: enabled
 - name: blocks_add_xx_0
@@ -206,7 +207,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [960, 409]
+    coordinate: [952, 360.0]
     rotation: 0
     state: enabled
 - name: lte_channel_estimator_0
@@ -291,7 +292,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [792, 553]
+    coordinate: [920, 576.0]
     rotation: 0
     state: enabled
 - name: lte_pss_sync_0
@@ -348,7 +349,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [152, 195]
+    coordinate: [88, 148.0]
     rotation: 0
     state: enabled
 - name: pre_rational_resampler_xxx_0

@@ -25,5 +25,9 @@ install(FILES
     lte_layer_demapper_vcvc.block.yml
     lte_qpsk_soft_demod_vcvf.block.yml
     lte_pbch_descrambler_vfvf.block.yml
-    lte_repeat_message_source_vf.block.yml DESTINATION share/gnuradio/grc/blocks
+    lte_bch_viterbi_vfvb.block.yml
+    lte_repeat_message_source_vf.block.yml
+    lte_crc_check_vbvb.block.yml
+    lte_bch_crc_check_ant_chooser_bb.block.yml
+    lte_mib_unpack_vbm.block.yml DESTINATION share/gnuradio/grc/blocks
 )
