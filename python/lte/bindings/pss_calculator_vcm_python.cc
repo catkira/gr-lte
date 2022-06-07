@@ -30,13 +30,15 @@ namespace py = pybind11;
 void bind_pss_calculator_vcm(py::module& m)
 {
 
-    using pss_calculator_vcm    = gr::lte::pss_calculator_vcm;
+    using pss_calculator_vcm    = ::gr::lte::pss_calculator_vcm;
 
 
     py::class_<pss_calculator_vcm, gr::sync_block, gr::block, gr::basic_block,
         std::shared_ptr<pss_calculator_vcm>>(m, "pss_calculator_vcm", D(pss_calculator_vcm))
 
         .def(py::init(&pss_calculator_vcm::make),
+           py::arg("fftl"),
+           py::arg("name"),
            D(pss_calculator_vcm,make)
         )
         

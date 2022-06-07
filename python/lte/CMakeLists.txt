@@ -39,7 +39,6 @@ add_custom_target(
   COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}
           ${CMAKE_BINARY_DIR}/test_modules/gnuradio/lte/
 )
-GR_ADD_TEST(qa_pss_tagger ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pss_tagger.py)
 GR_ADD_TEST(qa_pss_symbol_selector_cvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pss_symbol_selector_cvc.py)
 GR_ADD_TEST(qa_pss_calculator_vcm ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pss_calculator_vcm.py)
 GR_ADD_TEST(qa_extract_subcarriers_vcvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_extract_subcarriers_vcvc.py)
@@ -52,3 +51,4 @@ GR_ADD_TEST(qa_rough_symbol_sync_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_
 GR_ADD_TEST(qa_remove_cp_cvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_remove_cp_cvc.py)
 GR_ADD_TEST(qa_channel_estimator_vcvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_channel_estimator_vcvc.py)
 GR_ADD_TEST(qa_rs_map_generator_m ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_rs_map_generator_m.py)
+GR_ADD_TEST(qa_pss_tagger_cc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pss_tagger_cc.py)

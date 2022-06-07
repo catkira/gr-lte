@@ -12,7 +12,6 @@
 include(GrPlatform) #define LIB_SUFFIX
 list(APPEND lte_sources
     correlator.cc
-    pss_tagger_cc_impl.cc
     pss_symbol_selector_cvc_impl.cc
     pss_calculator_vcm_impl.cc
     extract_subcarriers_vcvc_impl.cc
@@ -23,7 +22,8 @@ list(APPEND lte_sources
     subblock_deinterleaver_vfvf_impl.cc
     rough_symbol_sync_cc_impl.cc
     remove_cp_cvc_impl.cc
-    channel_estimator_vcvc_impl.cc )
+    channel_estimator_vcvc_impl.cc
+    pss_tagger_cc_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)
@@ -32,7 +32,6 @@ if(NOT lte_sources)
 endif(NOT lte_sources)
 
 list(APPEND lte_libs
-    ${GNURADIO_RUNTIME_LIBRARIES}
     ${VOLK_LIBRARIES}
     ${FFTW3F_LIBRARIES}
 )

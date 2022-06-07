@@ -100,7 +100,6 @@ endif(APPLE)
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules) 
 
 find_package(Doxygen)
-find_package(CppUnit)
 find_package(FFTW3f)
 find_package(Volk)
 
