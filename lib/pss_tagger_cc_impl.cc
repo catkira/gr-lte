@@ -14,7 +14,7 @@ namespace gr {
     using input_type = gr_complex;
     using output_type = gr_complex;
     pss_tagger_cc::sptr
-    pss_tagger_cc::make(int fftl, std::string& name)
+    pss_tagger_cc::make(int fftl, std::string name)
     {
       return gnuradio::make_block_sptr<pss_tagger_cc_impl>(
         fftl, name);
@@ -24,7 +24,7 @@ namespace gr {
     /*
      * The private constructor
      */
-    pss_tagger_cc_impl::pss_tagger_cc_impl(int fftl, std::string& name)
+    pss_tagger_cc_impl::pss_tagger_cc_impl(int fftl, std::string name)
       : gr::sync_block("pss_tagger_cc",
                 gr::io_signature::make(1, 1, sizeof(input_type)),
                 gr::io_signature::make(1, 1, sizeof(output_type))),

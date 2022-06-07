@@ -28,6 +28,8 @@ endif()
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
 # Find gnuradio to get access to the cmake modules
 find_package(Gnuradio "3.10" REQUIRED)
+message(STATUS "CMAKE_MODULE_PATH: ${CMAKE_MODULE_PATH}")
+
 
 # Set the version information here
 set(VERSION_MAJOR 1)
@@ -93,7 +95,14 @@ endif(APPLE)
 ########################################################################
 # Find gnuradio build dependencies
 ########################################################################
+
+# needs to be inserted again here, because some function above inserts  /usr/local/lib/cmake/gnuradio
+list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules) 
+
 find_package(Doxygen)
+find_package(CppUnit)
+find_package(FFTW3f)
+find_package(Volk)
 
 ########################################################################
 # Setup doxygen option
@@ -103,6 +112,27 @@ if(DOXYGEN_FOUND)
 else(DOXYGEN_FOUND)
     option(ENABLE_DOXYGEN "Build docs using Doxygen" OFF)
 endif(DOXYGEN_FOUND)
+
+########################################################################
+# Setup the include and linker paths
+########################################################################
+include_directories(
+    ${CMAKE_SOURCE_DIR}/lib
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_BINARY_DIR}/lib
+    ${CMAKE_BINARY_DIR}/include
+    ${CPPUNIT_INCLUDE_DIRS}
+    ${GNURADIO_ALL_INCLUDE_DIRS}
+    ${VOLK_INCLUDE_DIRS}
+    ${FFTW3_INCLUDE_DIRS}
+)
+
+link_directories(
+    ${CPPUNIT_LIBRARY_DIRS}
+    ${GNURADIO_RUNTIME_LIBRARY_DIRS}
+    ${VOLK_LIBRARY_DIRS}
+    ${FFTW3_LIBRARY_DIRS}
+)
 
 ########################################################################
 # Create uninstall target
@@ -123,14 +153,8 @@ add_subdirectory(include/gnuradio/lte)
 add_subdirectory(lib)
 add_subdirectory(apps)
 add_subdirectory(docs)
-# NOTE: manually update below to use GRC to generate C++ flowgraphs w/o python
-if(ENABLE_PYTHON)
-  message(STATUS "PYTHON and GRC components are enabled")
-  add_subdirectory(python/lte)
-  add_subdirectory(grc)
-else(ENABLE_PYTHON)
-  message(STATUS "PYTHON and GRC components are disabled")
-endif(ENABLE_PYTHON)
+add_subdirectory(python/lte)
+add_subdirectory(grc)
 
 ########################################################################
 # Install cmake search helper for this library

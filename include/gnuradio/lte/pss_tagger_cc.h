@@ -32,7 +32,7 @@ namespace gr {
        * class. lte::pss_tagger_cc::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int fftl, std::string& name);
+      static sptr make(int fftl, std::string name);
     };
 
   } // namespace lte

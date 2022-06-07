@@ -32,7 +32,7 @@ namespace gr {
         void handle_msg_half_frame_start(pmt::pmt_t msg);
         void handle_msg_N_id_2(pmt::pmt_t msg);        
     public:
-        pss_tagger_cc_impl(int fftl, std::string& name);
+        pss_tagger_cc_impl(int fftl, std::string name);
         ~pss_tagger_cc_impl();
 
         // Where all the action really happens

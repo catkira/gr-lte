@@ -20,5 +20,5 @@ except ModuleNotFoundError:
     pass
 
 # import any pure python here
-from .rs_map_generator import rs_map_generator
+#from .rs_map_generator import rs_map_generator
 #

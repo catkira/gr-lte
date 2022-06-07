@@ -31,8 +31,14 @@ if(NOT lte_sources)
     return()
 endif(NOT lte_sources)
 
+list(APPEND lte_libs
+    ${GNURADIO_RUNTIME_LIBRARIES}
+    ${VOLK_LIBRARIES}
+    ${FFTW3F_LIBRARIES}
+)
+
 add_library(gnuradio-lte SHARED ${lte_sources})
-target_link_libraries(gnuradio-lte gnuradio::gnuradio-runtime)
+target_link_libraries(gnuradio-lte gnuradio::gnuradio-runtime ${lte_libs})
 target_include_directories(gnuradio-lte
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
     PUBLIC $<INSTALL_INTERFACE:include>
