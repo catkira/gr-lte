@@ -299,13 +299,14 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
+    name: ' "layer_demapper_vcvc"'
     style: style
     vlen: vlen
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [712, 180.0]
+    coordinate: [800, 148.0]
     rotation: 0
     state: enabled
 - name: pbch_layer_demapper_vcvc_1
@@ -317,6 +318,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
+    name: ' "layer_demapper_vcvc"'
     style: style
     vlen: vlen
   states:
@@ -334,6 +336,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
+    name: ' "qpsk_soft_demod_vcvf"'
     vlen: vlen
   states:
     bus_sink: false

@@ -1,0 +1,27 @@
+id: lte_qpsk_soft_demod_vcvf
+label: qpsk soft demod vcvf
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.qpsk_soft_demod_vcvf(${vlen}, ${name})
+parameters:
+- id: vlen
+  label: vector length
+  dtype: int
+- id: name
+  label: Name
+  default: ' "qpsk_soft_demod_vcvf"'
+  dtype: string
+inputs:
+- label: in
+  domain: stream
+  dtype: complex
+  vlen: ${ vlen }
+  multiplicity: 1
+outputs:
+- label: out
+  domain: stream
+  dtype: float
+  vlen: ${ 2 * vlen }
+  multiplicity: 1
+file_format: 1

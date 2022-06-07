@@ -41,7 +41,11 @@ list(APPEND lte_python_files
     remove_cp_cvc_python.cc
     channel_estimator_vcvc_python.cc
     pbch_demux_vcvc_python.cc
-    pre_decoder_vcvc_python.cc python_bindings.cc)
+    pre_decoder_vcvc_python.cc
+    layer_demapper_vcvc_python.cc
+    qpsk_soft_demod_vcvf_python.cc
+    pbch_descrambler_vfvf_python.cc
+    repeat_message_source_vf_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(lte
    ../../..

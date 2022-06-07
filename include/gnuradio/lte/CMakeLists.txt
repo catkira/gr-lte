@@ -25,5 +25,9 @@ install(FILES
     remove_cp_cvc.h
     channel_estimator_vcvc.h
     pbch_demux_vcvc.h
-    pre_decoder_vcvc.h DESTINATION include/gnuradio/lte
+    pre_decoder_vcvc.h
+    layer_demapper_vcvc.h
+    qpsk_soft_demod_vcvf.h
+    pbch_descrambler_vfvf.h
+    repeat_message_source_vf.h DESTINATION include/gnuradio/lte
 )

@@ -25,7 +25,11 @@ list(APPEND lte_sources
     channel_estimator_vcvc_impl.cc
     pss_tagger_cc_impl.cc
     pbch_demux_vcvc_impl.cc
-    pre_decoder_vcvc_impl.cc )
+    pre_decoder_vcvc_impl.cc
+    layer_demapper_vcvc_impl.cc
+    qpsk_soft_demod_vcvf_impl.cc
+    pbch_descrambler_vfvf_impl.cc
+    repeat_message_source_vf_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)

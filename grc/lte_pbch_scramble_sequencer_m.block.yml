@@ -1,0 +1,17 @@
+id: lte_pbch_scramble_sequencer_m
+label: Scrambling sequence message
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.pbch_scramble_sequencer_m(${name})
+parameters:
+- id: name
+  label: Name
+  dtype: string
+inputs:
+- domain: message
+  id: cell_id
+outputs:
+- domain: message
+  id: vector 
+file_format: 1

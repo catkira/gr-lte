@@ -20,5 +20,10 @@ install(FILES
     lte_channel_estimator_vcvc.block.yml
     lte_rs_map_generator_m.block.yml
     lte_pbch_demux_vcvc.block.yml
-    lte_pre_decoder_vcvc.block.yml DESTINATION share/gnuradio/grc/blocks
+    lte_pbch_scramble_sequencer_m.block.yml
+    lte_pre_decoder_vcvc.block.yml
+    lte_layer_demapper_vcvc.block.yml
+    lte_qpsk_soft_demod_vcvf.block.yml
+    lte_pbch_descrambler_vfvf.block.yml
+    lte_repeat_message_source_vf.block.yml DESTINATION share/gnuradio/grc/blocks
 )

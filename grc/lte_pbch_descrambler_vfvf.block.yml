@@ -1,0 +1,25 @@
+id: lte_pbch_descrambler_vfvf
+label: pbch descrambler vfvf
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.pbch_descrambler_vfvf(${key})
+parameters:
+- id: key
+  label: tag key
+  dtype: string
+inputs:
+- label: in
+  domain: stream
+  dtype: float
+  vlen: '1920'
+  multiplicity: 1
+- domain: message
+  id: cell_id
+outputs:
+- label: out
+  domain: stream
+  dtype: float
+  vlen: '120'
+  multiplicity: 1
+file_format: 1

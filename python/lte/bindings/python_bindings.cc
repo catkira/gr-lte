@@ -35,6 +35,10 @@ namespace py = pybind11;
     void bind_pss_tagger_cc(py::module& m);
     void bind_pbch_demux_vcvc(py::module& m);
     void bind_pre_decoder_vcvc(py::module& m);
+    void bind_layer_demapper_vcvc(py::module& m);
+    void bind_qpsk_soft_demod_vcvf(py::module& m);
+    void bind_pbch_descrambler_vfvf(py::module& m);
+    void bind_repeat_message_source_vf(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -77,5 +81,9 @@ PYBIND11_MODULE(lte_python, m)
     bind_pss_tagger_cc(m);
     bind_pbch_demux_vcvc(m);
     bind_pre_decoder_vcvc(m);
+    bind_layer_demapper_vcvc(m);
+    bind_qpsk_soft_demod_vcvf(m);
+    bind_pbch_descrambler_vfvf(m);
+    bind_repeat_message_source_vf(m);
     // ) END BINDING_FUNCTION_CALLS
 }
