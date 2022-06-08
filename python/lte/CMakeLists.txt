@@ -24,6 +24,7 @@ GR_PYTHON_INSTALL(
     __init__.py
     utils.py
     pbch_scramble_sequencer_m.py
+    pcfich_scramble_sequencer_m.py
     bch_viterbi_vfvb.py
     rs_map_generator_m.py DESTINATION ${GR_PYTHON_DIR}/gnuradio/lte
 )
@@ -66,3 +67,4 @@ GR_ADD_TEST(qa_bch_crc_check_ant_chooser_bb ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT
 GR_ADD_TEST(qa_mib_unpack_vbm ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_mib_unpack_vbm.py)
 GR_ADD_TEST(qa_pcfich_demux_vcvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pcfich_demux_vcvc.py)
 GR_ADD_TEST(qa_pcfich_unpack_vfm ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pcfich_unpack_vfm.py)
+GR_ADD_TEST(qa_descrambler_vfvf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_descrambler_vfvf.py)

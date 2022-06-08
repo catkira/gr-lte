@@ -136,7 +136,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [568, 192]
+    coordinate: [976, 176.0]
     rotation: 0
     state: disabled
 - name: blocks_deinterleave_0
@@ -155,7 +155,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [400, 192]
+    coordinate: [808, 176.0]
     rotation: 0
     state: disabled
 - name: blocks_head_0_0
@@ -173,7 +173,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 131]
+    coordinate: [848, 116.0]
     rotation: 0
     state: disabled
 - name: blocks_throttle_0
@@ -192,7 +192,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [696, 131]
+    coordinate: [1104, 116.0]
     rotation: 0
     state: disabled
 - name: lte_bch_decoder_0
@@ -337,7 +337,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: /home/johannes/src/gr-lte/tests/lte_test_data_RX1_NRBDL100.dat
+    file: /mnt/d/lte-1830MHz-gain30dB-capturedRate20Msps-bandwidth20MHz-it1.bin
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -349,7 +349,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [88, 148.0]
+    coordinate: [416, 92.0]
     rotation: 0
     state: enabled
 - name: pre_rational_resampler_xxx_0
@@ -369,7 +369,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [864, 107]
+    coordinate: [1272, 92.0]
     rotation: 0
     state: disabled
 - name: sync_lte_rough_symbol_sync_cc_0

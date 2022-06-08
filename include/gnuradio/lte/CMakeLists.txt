@@ -34,5 +34,6 @@ install(FILES
     bch_crc_check_ant_chooser_bb.h
     mib_unpack_vbm.h
     pcfich_demux_vcvc.h
-    pcfich_unpack_vfm.h DESTINATION include/gnuradio/lte
+    pcfich_unpack_vfm.h
+    descrambler_vfvf.h DESTINATION include/gnuradio/lte
 )

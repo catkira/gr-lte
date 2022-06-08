@@ -1,5 +1,6 @@
 import numpy
 from gnuradio import gr
+import pmt
 
 class rs_map_generator_m(gr.sync_block):
     """
@@ -11,7 +12,7 @@ class rs_map_generator_m(gr.sync_block):
             in_sig=None,
             out_sig=None)
             
-        print ("RS GENERATOR" + msg_buf_name_in + "\t" + msg_buf_name_out + "\t" + ant_port)
+        print ("RS GENERATOR" + msg_buf_name_in + "\t" + msg_buf_name_out + "\t" + str(ant_port))
         self.N_rb_dl = N_rb_dl
         self.ant_port = ant_port
         self.msg_buf_in = pmt.intern(msg_buf_name_in)

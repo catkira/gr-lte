@@ -44,6 +44,7 @@ namespace py = pybind11;
     void bind_mib_unpack_vbm(py::module& m);
     void bind_pcfich_demux_vcvc(py::module& m);
     void bind_pcfich_unpack_vfm(py::module& m);
+    void bind_descrambler_vfvf(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -95,5 +96,6 @@ PYBIND11_MODULE(lte_python, m)
     bind_mib_unpack_vbm(m);
     bind_pcfich_demux_vcvc(m);
     bind_pcfich_unpack_vfm(m);
+    bind_descrambler_vfvf(m);
     // ) END BINDING_FUNCTION_CALLS
 }

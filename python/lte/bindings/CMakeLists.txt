@@ -50,7 +50,8 @@ list(APPEND lte_python_files
     bch_crc_check_ant_chooser_bb_python.cc
     mib_unpack_vbm_python.cc
     pcfich_demux_vcvc_python.cc
-    pcfich_unpack_vfm_python.cc python_bindings.cc)
+    pcfich_unpack_vfm_python.cc
+    descrambler_vfvf_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(lte
    ../../..

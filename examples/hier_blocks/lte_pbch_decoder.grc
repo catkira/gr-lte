@@ -152,7 +152,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1120, 377]
+    coordinate: [1144, 256.0]
     rotation: 0
     state: enabled
 - name: lte_pre_decoder_vcvc_0
@@ -208,7 +208,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1296, 379]
+    coordinate: [1376, 420.0]
     rotation: 0
     state: enabled
 - name: pad_source_0

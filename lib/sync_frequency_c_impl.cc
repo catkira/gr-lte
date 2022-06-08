@@ -19,7 +19,7 @@ namespace gr {
      * The private constructor
      */
     sync_frequency_c_impl::sync_frequency_c_impl(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, std::string name)
-      : gr::sync_block("sync_frequency_c",
+      : gr::sync_block(name,
                 gr::io_signature::make(1, 1, sizeof(input_type)),
                 gr::io_signature::make(0, 0, 0)),
                 d_sig(sig),

@@ -19,7 +19,7 @@ namespace gr {
     repeat_message_source_vf_impl::repeat_message_source_vf_impl(int vector_len, std::string name)
       : gr::sync_block("repeat_message_source_vf",
               gr::io_signature::make(0, 0, 0),
-              gr::io_signature::make(1 /* min outputs */, 1 /*max outputs */, sizeof(output_type))),
+              gr::io_signature::make(1 /* min outputs */, 1 /*max outputs */, sizeof(output_type) * vector_len)),
               d_vector_len(vector_len),
               d_is_initialized(false)              
     {

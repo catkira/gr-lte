@@ -3,7 +3,7 @@ label: rs_map_generator_m
 category: '[Lte]'
 templates:
   imports: from gnuradio import lte
-  make: lte.rs_map_generator_m("cell_id", "pilots", ${N_rb_dl}, ${ant_port}, ${id})
+  make: lte.rs_map_generator_m("cell_id", "pilots", ${N_rb_dl}, ${ant_port}, "${id}")
 parameters:
 - id: N_rb_dl
   dtype: int

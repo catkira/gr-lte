@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [768, 35]
+    coordinate: [792, 36.0]
     rotation: 0
     state: enabled
 - name: style
@@ -54,7 +54,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [593, 35]
+    coordinate: [568, 36.0]
     rotation: 0
     state: enabled
 - name: tag_key
@@ -66,7 +66,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [831, 36]
+    coordinate: [872, 36.0]
     rotation: 0
     state: enabled
 - name: vlen
@@ -107,7 +107,7 @@ blocks:
     label: Input key
     short_id: ''
     type: ''
-    value: symbol
+    value: '"symbol"'
   states:
     bus_sink: false
     bus_source: false
@@ -203,6 +203,8 @@ blocks:
     key: key
     maxoutbuf: '0'
     minoutbuf: '0'
+    msg_buf_name: ''
+    name: ' "pcfich_demux_vcvc"'
     out_key: tag_key
   states:
     bus_sink: false
@@ -221,6 +223,8 @@ blocks:
     key: key
     maxoutbuf: '0'
     minoutbuf: '0'
+    msg_buf_name: ''
+    name: ' "pcfich_demux_vcvc"'
     out_key: tag_key
   states:
     bus_sink: false
@@ -239,6 +243,8 @@ blocks:
     key: key
     maxoutbuf: '0'
     minoutbuf: '0'
+    msg_buf_name: ''
+    name: ' "pcfich_demux_vcvc"'
     out_key: tag_key
   states:
     bus_sink: false
@@ -344,6 +350,7 @@ blocks:
     key: tag_key
     maxoutbuf: '0'
     minoutbuf: '0'
+    name: ' "pcfich_unpack_vfm"'
   states:
     bus_sink: false
     bus_source: false

@@ -1,0 +1,17 @@
+id: lte_pcfich_scramble_sequencer_m
+label: PCFICH Descrambler Parameterizer
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.pcfich_scramble_sequencer_m(${name})
+parameters:
+- id: name
+  label: Name
+  dtype: string
+inputs:
+- domain: message
+  id: cell_id
+outputs:
+- domain: message
+  id: descr 
+file_format: 1
