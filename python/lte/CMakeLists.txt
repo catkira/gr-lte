@@ -64,3 +64,5 @@ GR_ADD_TEST(qa_repeat_message_source_vf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOU
 GR_ADD_TEST(qa_crc_check_vbvb ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_crc_check_vbvb.py)
 GR_ADD_TEST(qa_bch_crc_check_ant_chooser_bb ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_bch_crc_check_ant_chooser_bb.py)
 GR_ADD_TEST(qa_mib_unpack_vbm ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_mib_unpack_vbm.py)
+GR_ADD_TEST(qa_pcfich_demux_vcvc ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pcfich_demux_vcvc.py)
+GR_ADD_TEST(qa_pcfich_unpack_vfm ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_pcfich_unpack_vfm.py)

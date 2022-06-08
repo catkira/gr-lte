@@ -48,7 +48,9 @@ list(APPEND lte_python_files
     repeat_message_source_vf_python.cc
     crc_check_vbvb_python.cc
     bch_crc_check_ant_chooser_bb_python.cc
-    mib_unpack_vbm_python.cc python_bindings.cc)
+    mib_unpack_vbm_python.cc
+    pcfich_demux_vcvc_python.cc
+    pcfich_unpack_vfm_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(lte
    ../../..

@@ -29,5 +29,7 @@ install(FILES
     lte_repeat_message_source_vf.block.yml
     lte_crc_check_vbvb.block.yml
     lte_bch_crc_check_ant_chooser_bb.block.yml
-    lte_mib_unpack_vbm.block.yml DESTINATION share/gnuradio/grc/blocks
+    lte_mib_unpack_vbm.block.yml
+    lte_pcfich_demux_vcvc.block.yml
+    lte_pcfich_unpack_vfm.block.yml DESTINATION share/gnuradio/grc/blocks
 )

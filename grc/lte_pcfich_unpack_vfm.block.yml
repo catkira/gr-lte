@@ -1,0 +1,25 @@
+id: lte_pcfich_unpack_vfm
+label: CFI unpack
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.pcfich_unpack_vfm(${key}, "CFI", ${name})
+parameters:
+- id: key
+  label: tag key value
+  dtype: string
+- id: name
+  label: Name
+  default: ' "pcfich_unpack_vfm"'
+  dtype: string
+inputs:
+- label: in
+  domain: stream
+  dtype: float
+  vlen: '32'
+  multiplicity: 1
+outputs:
+- domain: message
+  id: CFI
+  optional: 1
+file_format: 1

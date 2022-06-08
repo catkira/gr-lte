@@ -32,7 +32,9 @@ list(APPEND lte_sources
     repeat_message_source_vf_impl.cc
     crc_check_vbvb_impl.cc
     bch_crc_check_ant_chooser_bb_impl.cc
-    mib_unpack_vbm_impl.cc )
+    mib_unpack_vbm_impl.cc
+    pcfich_demux_vcvc_impl.cc
+    pcfich_unpack_vfm_impl.cc )
 
 set(lte_sources "${lte_sources}" PARENT_SCOPE)
 if(NOT lte_sources)

@@ -1,0 +1,36 @@
+id: lte_pcfich_demux_vcvc
+label: PCFICH Demux
+category: '[Lte]'
+templates:
+  imports: from gnuradio import lte
+  make: lte.pcfich_demux_vcvc(${N_rb_dl}, ${key}, ${out_key}, ${msg_buf_name}, ${name})
+parameters:
+- id: N_rb_dl
+  label: resource blocks
+  dtype: int
+- id: key
+  label: Input key
+  dtype: string
+- id: out_key
+  label: Output key
+  dtype: string
+- id: msg_buf_name
+  label: Msg_buf_name
+  dtype: string
+- id: name
+  label: Name
+  default: ' "pcfich_demux_vcvc"'
+  dtype: string
+inputs:
+- label: in
+  domain: stream
+  dtype: complex
+  vlen: ${ 12 * N_rb_dl }
+  multiplicity: 1
+outputs:
+- label: out
+  domain: stream
+  dtype: complex
+  vlen: '16'
+  multiplicity: 1
+file_format: 1

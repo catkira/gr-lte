@@ -32,5 +32,7 @@ install(FILES
     repeat_message_source_vf.h
     crc_check_vbvb.h
     bch_crc_check_ant_chooser_bb.h
-    mib_unpack_vbm.h DESTINATION include/gnuradio/lte
+    mib_unpack_vbm.h
+    pcfich_demux_vcvc.h
+    pcfich_unpack_vfm.h DESTINATION include/gnuradio/lte
 )
