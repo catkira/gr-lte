@@ -42,7 +42,7 @@ blocks:
     label: resource blocks
     short_id: ''
     type: intx
-    value: '50'
+    value: '6'
   states:
     bus_sink: false
     bus_source: false
@@ -156,7 +156,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [808, 140.0]
+    coordinate: [968, 212.0]
     rotation: 0
     state: enabled
 - name: pad_source_0
