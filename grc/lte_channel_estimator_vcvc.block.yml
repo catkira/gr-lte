@@ -3,7 +3,7 @@ label: channel estimator vcvc
 category: '[Lte]'
 templates:
   imports: from gnuradio import lte
-  make: lte.channel_estimator_vcvc(${rxant}, ${subcarriers}, ${tag_key}, ${msg_buf_name},
+  make: lte.channel_estimator_vcvc(${rxant}, ${subcarriers}, ${tag_key}, "pilots",
     ${pilot_carriers}, ${pilot_symbols}, ${name})
 parameters:
 - id: rxant

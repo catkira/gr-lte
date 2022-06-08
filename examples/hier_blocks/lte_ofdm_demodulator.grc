@@ -42,7 +42,7 @@ blocks:
     label: resource blocks
     short_id: ''
     type: intx
-    value: '6'
+    value: '50'
   states:
     bus_sink: false
     bus_source: false

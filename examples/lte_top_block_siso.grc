@@ -120,7 +120,7 @@ blocks:
     bus_structure: null
     coordinate: [1192, 384.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_add_xx_0
   id: blocks_add_xx
   parameters:
@@ -158,60 +158,6 @@ blocks:
     coordinate: [808, 176.0]
     rotation: 0
     state: disabled
-- name: blocks_file_sink_0
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: \mnt\d\tmp.out
-    type: complex
-    unbuffered: 'False'
-    vlen: '72'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [776, 764.0]
-    rotation: 0
-    state: disabled
-- name: blocks_file_sink_0_0
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: \mnt\d\tmp2.out
-    type: complex
-    unbuffered: 'False'
-    vlen: '72'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [536, 764.0]
-    rotation: 0
-    state: disabled
-- name: blocks_file_sink_0_0_0
-  id: blocks_file_sink
-  parameters:
-    affinity: ''
-    alias: ''
-    append: 'False'
-    comment: ''
-    file: \mnt\d\tmp2.out
-    type: complex
-    unbuffered: 'False'
-    vlen: '72'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [288, 748.0]
-    rotation: 0
-    state: true
 - name: blocks_head_0_0
   id: blocks_head
   parameters:
@@ -263,7 +209,7 @@ blocks:
     bus_structure: null
     coordinate: [952, 360.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: lte_channel_estimator_0
   id: lte_channel_estimator
   parameters:
@@ -281,7 +227,7 @@ blocks:
     bus_structure: null
     coordinate: [480, 392.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: lte_cp_ffo_sync_0
   id: lte_cp_ffo_sync
   parameters:
@@ -331,7 +277,7 @@ blocks:
     bus_structure: null
     coordinate: [792, 377]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: lte_pcfich_decoder_0
   id: lte_pcfich_decoder
   parameters:
@@ -348,7 +294,7 @@ blocks:
     bus_structure: null
     coordinate: [920, 576.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: lte_pss_sync_0
   id: lte_pss_sync
   parameters:
@@ -457,14 +403,11 @@ connections:
 - [blocks_throttle_0, '0', sync_lte_rough_symbol_sync_cc_0, '0']
 - [lte_bch_decoder_0, '0', MIB, '0']
 - [lte_bch_decoder_0, '1', MIB, '1']
-- [lte_channel_estimator_0, '0', blocks_file_sink_0_0, '0']
 - [lte_channel_estimator_0, '0', lte_pbch_decoder_0, '0']
 - [lte_channel_estimator_0, '0', lte_pcfich_decoder_0, '0']
-- [lte_channel_estimator_0, '1', blocks_file_sink_0, '0']
 - [lte_channel_estimator_0, '1', lte_pbch_decoder_0, '1']
 - [lte_channel_estimator_0, '1', lte_pcfich_decoder_0, '1']
 - [lte_cp_ffo_sync_0, '0', lte_sss_sync_0, '0']
-- [lte_ofdm_demodulator_0, '0', blocks_file_sink_0_0_0, '0']
 - [lte_ofdm_demodulator_0, '0', lte_channel_estimator_0, '0']
 - [lte_ofdm_demodulator_0, '0', lte_pbch_decoder_0, '2']
 - [lte_ofdm_demodulator_0, '0', lte_pcfich_decoder_0, '2']
