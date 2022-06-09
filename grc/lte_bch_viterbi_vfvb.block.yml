@@ -3,11 +3,7 @@ label: BCH Viterbi
 category: '[Lte]'
 templates:
   imports: from gnuradio import lte
-  make: lte.lte_bch_viterbi_vfvb(${key})
-parameters:
-- id: key
-  label: tag key
-  dtype: string
+  make: lte.bch_viterbi_vfvb()
 inputs:
 - label: in
   domain: stream

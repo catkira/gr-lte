@@ -177,7 +177,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [80, 467]
+    coordinate: [24, 404.0]
     rotation: 0
     state: enabled
 - name: initial_id
