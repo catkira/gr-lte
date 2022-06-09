@@ -265,7 +265,7 @@ blocks:
 - name: lte_pbch_decoder_0
   id: lte_pbch_decoder
   parameters:
-    N_rb_dl: '50'
+    N_rb_dl: N_rb_dl
     affinity: ''
     alias: ''
     comment: ''
@@ -425,4 +425,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: v3.11.0.0git-128-gfa8953de
+  grc_version: v3.11.0.0git-172-g424df10a
