@@ -19,7 +19,7 @@
 # Boston, MA 02110-1301, USA.
 # 
 
-from gnuradio import gr, blocks, trellis
+from gnuradio import gr, blocks, trellis, digital
 
 
 class bch_viterbi_vfvb(gr.hier_block2):
@@ -64,7 +64,7 @@ class bch_viterbi_vfvb(gr.hier_block2):
         # 1 --> -1
         # This leads to the following constellation input
         #               |  0  |  1   | 2    | 3     |  4   |  5    |  6    |  7     |
-        constellation = [1, 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1]
+        constellation = [1., 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1]
         # print "len(constellation)/D = " + str(len(constellation)/D) + "\tfsm.O = " + str(self.fsm.O())
         # Viterbi_combined input: FSM, K, SO, SK, D, TABLE, TYPE
         # FSM    = Finite State Machine
@@ -73,7 +73,8 @@ class bch_viterbi_vfvb(gr.hier_block2):
         # SK     = final state of the FSM (unknown in this example)
         # D      = dimensionality
         # TABLE  = constellation of the input symbols
-        self.vit = trellis.viterbi_combined_fb(self.fsm, K, SO, SK, D, constellation, 200)
+        # TYPE   = digital::trellis_metric_type_t 
+        self.vit = trellis.viterbi_combined_fb(self.fsm, K, SO, SK, D, constellation, digital.TRELLIS_EUCLIDEAN)
         self.connect(self.app, self.vit)
         # connect all streams which are crated yet        
         #self.connect(self,self.rpt,self.vtos,self.vit)
