@@ -13,7 +13,7 @@ parameters:
   dtype: int
 - id: name
   label: Name
-  default: ' "subblock_deinterleaver_vfvf"'
+  default: '${id}'
   dtype: string
 inputs:
 - label: in

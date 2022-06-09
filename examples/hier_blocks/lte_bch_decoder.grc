@@ -142,6 +142,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
+    name: ' "bch_crc_check_ant_chooser_bb"'
   states:
     bus_sink: false
     bus_source: false
@@ -155,7 +156,6 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    key: ''
     maxoutbuf: '0'
     minoutbuf: '0'
   states:

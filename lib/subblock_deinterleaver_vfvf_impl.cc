@@ -19,8 +19,10 @@ namespace gr {
      */
     subblock_deinterleaver_vfvf_impl::subblock_deinterleaver_vfvf_impl(int num_groups, int items_per_group, std::string name)
       : gr::sync_block("subblock_deinterleaver_vfvf",
-              gr::io_signature::make(1, 1, sizeof(input_type)),
-              gr::io_signature::make(1, 1, sizeof(output_type)))
+                gr::io_signature::make(1, 1, sizeof(input_type) * num_groups * items_per_group),
+                gr::io_signature::make(1, 1, sizeof(output_type) * num_groups * items_per_group)),
+                d_num_groups(num_groups),
+                d_items_per_group(items_per_group)
     {
 		d_interleaved_pos = subblock_interleaver_prototype(num_groups);        
     }
