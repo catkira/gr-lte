@@ -20,11 +20,11 @@ namespace gr {
      */
     channel_estimator_vcvc_impl::channel_estimator_vcvc_impl(int rxant, int subcarriers, std::string tag_key, std::string msg_buf_name, const std::vector<std::vector<int> > &pilot_carriers, const std::vector<std::vector<gr_complex> > &pilot_symbols, std::string name)
       : gr::sync_block("channel_estimator_vcvc",
-                gr::io_signature::make(1, 1, sizeof(input_type)),
-                gr::io_signature::make(1, 1, sizeof(output_type))),
+                gr::io_signature::make(1, 1, sizeof(input_type) * subcarriers * rxant),
+                gr::io_signature::make(1, 1, sizeof(output_type) * subcarriers * rxant)),
                 d_subcarriers(subcarriers),
                 d_last_calced_sym(-1),
-                d_rxant(rxant)              
+                d_rxant(rxant)
     {
       d_key = pmt::string_to_symbol(tag_key); // specify key of tag.
       d_msg_buf = pmt::mp(msg_buf_name);
