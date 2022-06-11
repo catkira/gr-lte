@@ -158,6 +158,24 @@ blocks:
     coordinate: [808, 176.0]
     rotation: 0
     state: disabled
+- name: blocks_file_sink_0
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: tmp.dat
+    type: complex
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [320, 760.0]
+    rotation: 0
+    state: disabled
 - name: blocks_head_0_0
   id: blocks_head
   parameters:
@@ -337,7 +355,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: /mnt/d/lte-1830MHz-gain30dB-capturedRate20Msps-bandwidth20MHz-it1.bin
+    file: /mnt/d/git/gr-lte/examples/recording.dat
     length: '307200000'
     maxoutbuf: '0'
     minoutbuf: '0'
@@ -413,6 +431,7 @@ connections:
 - [lte_ofdm_demodulator_0, '0', lte_pcfich_decoder_0, '2']
 - [lte_pbch_decoder_0, '0', lte_bch_decoder_0, '0']
 - [lte_pss_sync_0, '0', lte_cp_ffo_sync_0, '0']
+- [lte_sss_sync_0, '0', blocks_file_sink_0, '0']
 - [lte_sss_sync_0, '0', lte_ofdm_demodulator_0, '0']
 - [lte_sss_sync_0, cell_id, lte_channel_estimator_0, cell_id]
 - [lte_sss_sync_0, cell_id, lte_pbch_decoder_0, cell_id]
@@ -425,4 +444,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: v3.11.0.0git-172-g424df10a
+  grc_version: v3.11.0.0git-128-gfa8953de

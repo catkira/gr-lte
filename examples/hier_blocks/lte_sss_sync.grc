@@ -164,8 +164,8 @@ blocks:
     alias: ''
     comment: ''
     fftl: fftlen
-    key_id: ''
-    key_offset: ''
+    key_id: group_key
+    key_offset: offset_marker
     maxoutbuf: '0'
     minoutbuf: '0'
     name: ''
@@ -173,7 +173,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [800, 210]
+    coordinate: [856, 236.0]
     rotation: 0
     state: enabled
 - name: sync_sss_extract_subcarriers_vcvc_0
@@ -191,7 +191,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [611, 218]
+    coordinate: [608, 356.0]
     rotation: 0
     state: enabled
 - name: sync_sss_fft_vxx_0
@@ -212,7 +212,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [381, 194]
+    coordinate: [312, 396.0]
     rotation: 0
     state: enabled
 - name: sync_sss_symbol_selector_cvc_0

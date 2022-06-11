@@ -3,19 +3,16 @@ label: sss calculator vcm
 category: '[Lte]'
 templates:
   imports: from gnuradio import lte
-  make: lte.sss_calculator_vcm(${fftl}, ${key_id}, ${key_offset}, ${name})
+  make: lte.sss_calculator_vcm(${fftl}, ${key_id}, ${key_offset}, '${id}')
 parameters:
 - id: fftl
   label: Fftl
   dtype: int
 - id: key_id
-  label: Key_id
+  label: cell ID group key
   dtype: string
 - id: key_offset
-  label: Key_offset
-  dtype: string
-- id: name
-  label: Name
+  label: offset marker key
   dtype: string
 inputs:
 - label: in
