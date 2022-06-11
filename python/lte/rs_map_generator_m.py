@@ -1,6 +1,7 @@
-import numpy
+import numpy as np
 from gnuradio import gr
 import pmt
+import math
 
 class rs_map_generator_m(gr.sync_block):
     """
@@ -30,7 +31,7 @@ class rs_map_generator_m(gr.sync_block):
         else:
             self.cell_id = cell_id
 
-        print (self.name() + " cell_id = " + self.cell_id + " generating RS map!")
+        print (self.name() + " cell_id = " + str(self.cell_id) + " generating RS map!")
         #print "generate pilot map: cell_id = " + str(cell_id) + "\tant_port = " + str(self.ant_port)
         Ncp = 1  # Always 1 for our purposes --> thus it's hard coded
         [rs_poss, rs_vals] = self.frame_pilot_value_and_position(self.N_rb_dl, cell_id, Ncp, self.ant_port)
@@ -92,7 +93,7 @@ class rs_map_generator_m(gr.sync_block):
         N_RB_MAX = 110        
         rs_seq = self.rs_generator(ns, l, cell_id, Ncp)
         offset = self.calc_offset(ns, l, cell_id, p)
-        rs_sym_pos = range(offset, 12 * N_rb_dl, 6)
+        rs_sym_pos = list(range(offset, 12 * N_rb_dl, 6))
         rs_sym_val = rs_seq[N_RB_MAX - N_rb_dl:N_RB_MAX + N_rb_dl]
         return [rs_sym_pos, rs_sym_val]
 

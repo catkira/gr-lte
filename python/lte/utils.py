@@ -100,7 +100,7 @@ def calc_v(ns, l, p):
 
 
 def encode_nrz(data):
-    out_data = range(len(data))
+    out_data = list(range(len(data)))
     for i in range(len(data)):
         out_data[i] = float((-2.0 * data[i]) + 1)
     return out_data
