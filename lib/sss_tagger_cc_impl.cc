@@ -62,14 +62,13 @@ namespace gr {
         //This block does not change data. It just adds new itemtags!
         memcpy(out,in,sizeof(gr_complex)*noutput_items);
 
-        long nin = nitems_read(0);
-
+        unsigned long nin = nitems_read(0);
 
         std::vector <gr::tag_t> v;
         get_tags_in_range(v,0,nin,nin+noutput_items);
         if (v.size() > 0){
             //printf("\n\n\n%s tag: found\tvalue = %ld\toffset = %ld\n",name().c_str(),half_frame_slot,v[0].offset );
-            long offset_mod = (v[0].offset)%d_slotl;
+            unsigned long offset_mod = (v[0].offset)%d_slotl;
             if(offset_mod != d_offset_0){
                 d_offset_0 = offset_mod;
                 //printf("%s\toffset = %ld changed\tabs_pos = %ld\n", name().c_str(), d_offset_0, v[0].offset);
@@ -87,7 +86,6 @@ namespace gr {
             }
             return noutput_items;
         } //wait till first value found!
-
 
         //This loop adds new tags to the stream.
         for (int i = 0 ; i < noutput_items ; i++){

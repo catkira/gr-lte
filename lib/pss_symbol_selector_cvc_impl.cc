@@ -74,9 +74,10 @@ namespace gr {
     void
     pss_symbol_selector_cvc_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
     {
-    #pragma message("implement a forecast that fills in how many items on each input you need to produce noutput_items and remove this warning")
-      /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
-    }
+        unsigned ninputs = ninput_items_required.size ();
+        for (unsigned i = 0; i < ninputs; i++)
+            ninput_items_required[i] = 2*d_syml0 * noutput_items + history() - 1;
+	}
 
     int
     pss_symbol_selector_cvc_impl::general_work (int noutput_items,

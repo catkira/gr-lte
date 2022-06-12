@@ -18,7 +18,7 @@ namespace gr {
         uint64_t d_offset_0;
         pmt::pmt_t d_key;
         pmt::pmt_t d_tag_id;
-        long d_frame_start;
+        unsigned long d_frame_start;
         
         void set_frame_start(long frame_start);
         void handle_msg_frame_start(pmt::pmt_t msg);

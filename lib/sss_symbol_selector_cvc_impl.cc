@@ -49,7 +49,7 @@ namespace gr {
     void
     sss_symbol_selector_cvc_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
     {
-        for(int i = 0 ; i < ninput_items_required.size() ; i++){
+        for(unsigned int i = 0 ; i < ninput_items_required.size() ; i++){
             ninput_items_required[i] = noutput_items;
         }
         /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
