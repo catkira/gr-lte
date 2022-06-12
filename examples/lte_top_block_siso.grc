@@ -225,7 +225,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [952, 360.0]
+    coordinate: [984, 432.0]
     rotation: 0
     state: enabled
 - name: lte_channel_estimator_0
@@ -243,7 +243,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [480, 392.0]
+    coordinate: [488, 388.0]
     rotation: 0
     state: enabled
 - name: lte_cp_ffo_sync_0
@@ -259,7 +259,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [144, 283]
+    coordinate: [96, 300.0]
     rotation: 180
     state: enabled
 - name: lte_ofdm_demodulator_0
@@ -326,7 +326,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [328, 283]
+    coordinate: [296, 300.0]
     rotation: 180
     state: enabled
 - name: lte_sss_sync_0
@@ -367,7 +367,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [416, 92.0]
+    coordinate: [496, 132.0]
     rotation: 0
     state: enabled
 - name: pre_rational_resampler_xxx_0
@@ -405,7 +405,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 283]
+    coordinate: [488, 284.0]
     rotation: 180
     state: enabled
 
