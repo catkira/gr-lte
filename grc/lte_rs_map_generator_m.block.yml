@@ -10,7 +10,7 @@ parameters:
   label: resource blocks
 - id: ant_port
   dtype: int
-  name: antenna port
+  label: antenna port
 inputs:
 - domain: message
   id: cell_id
