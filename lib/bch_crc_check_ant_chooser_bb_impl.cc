@@ -48,7 +48,7 @@ namespace gr {
 			else if( (int) *in4 == 1){ ant = 4;}
 			else{ ant = 0;}
 			*out = ant;
-			//~ printf("ant1 = %i\tant2 = %i\t ant4 = %i\tdetected antennas %i\n", (int)*in1, (int)*in2, (int)*in4, ant );
+			printf("ant1 = %i\tant2 = %i\t ant4 = %i\tdetected antennas %i\n", (int)*in1, (int)*in2, (int)*in4, ant );
 			in1++;
 			in2++;
 			in4++;
