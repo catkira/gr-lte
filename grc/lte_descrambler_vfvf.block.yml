@@ -20,7 +20,7 @@ inputs:
   dtype: float
   vlen: ${ vlen }
   multiplicity: 1
-- domains: message
+- domain: message
   id: seqs
 outputs:
 - label: out

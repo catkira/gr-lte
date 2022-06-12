@@ -7,7 +7,7 @@ templates:
 parameters:
 - id: N_rb_dl
   dtype: int
-  name: resource blocks
+  label: resource blocks
 - id: ant_port
   dtype: int
   name: antenna port
