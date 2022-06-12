@@ -152,7 +152,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1144, 256.0]
+    coordinate: [1168, 464.0]
     rotation: 0
     state: enabled
 - name: lte_pre_decoder_vcvc_0
@@ -209,6 +209,24 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [1376, 420.0]
+    rotation: 0
+    state: enabled
+- name: pad_sink_0_0
+  id: pad_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    label: out
+    num_streams: '1'
+    optional: 'True'
+    type: complex
+    vlen: '240'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1392, 236.0]
     rotation: 0
     state: enabled
 - name: pad_source_0
@@ -342,7 +360,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [912, 371]
+    coordinate: [968, 364.0]
     rotation: 0
     state: enabled
 - name: z_pad_source_cell_id
@@ -379,6 +397,7 @@ connections:
 - [pad_source_1, '0', lte_pbch_demux_vcvc_0_1, '0']
 - [pad_source_2, '0', lte_pbch_demux_vcvc_0_0, '0']
 - [pbch_blocks_interleave_0, '0', pbch_qpsk_soft_demod_vcvf_0, '0']
+- [pbch_layer_demapper_vcvc_0, '0', pad_sink_0_0, '0']
 - [pbch_layer_demapper_vcvc_0, '0', pbch_blocks_interleave_0, '0']
 - [pbch_layer_demapper_vcvc_1, '0', pbch_blocks_interleave_0, '1']
 - [pbch_qpsk_soft_demod_vcvf_0, '0', lte_pbch_descrambler_0, '0']

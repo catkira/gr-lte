@@ -3,13 +3,10 @@ label: LTE Channel Descrambler
 category: '[Lte]'
 templates:
   imports: from gnuradio import lte
-  make: lte.descrambler_vfvf(${tag_key}, "seqs", ${vlen}, ${name}); self.${id}.set_descr_seqs(${initial_seqs})
+  make: lte.descrambler_vfvf(${tag_key}, "seqs", ${vlen}, '${id}'); self.${id}.set_descr_seqs(${initial_seqs})
 parameters:
 - id: tag_key
   label: Tag Key
-  dtype: string
-- id: msg_buf_name
-  label: Msg_buf_name
   dtype: string
 - id: vlen
   label: vector length
@@ -17,9 +14,6 @@ parameters:
 - id: initial_seqs
   label: Initial sequences
   dtype: raw  
-- id: name
-  label: Name
-  dtype: string
 inputs:
 - label: in
   domain: stream
