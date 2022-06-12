@@ -20,7 +20,7 @@ namespace gr {
 		pmt::pmt_t d_tag_id;
 		long d_work_call;
 		bool d_found_frame_start;
-		long d_frame_start;
+		unsigned long d_frame_start;
 
 		long copy_samples_from_in_to_out(gr_complex* out, const gr_complex* in, int noutput_items);
 		//void add_tags_to_vectors(int noutput_items, int sym_num, int symbols_per_frame);
