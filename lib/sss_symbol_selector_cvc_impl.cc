@@ -69,8 +69,7 @@ namespace gr {
         get_tags_in_range(v_id,0,nitems_read(0),nitems_read(0)+ninput_items[0],d_id_key);
         if (v_id.size() > 0){
             d_N_id_2 = int(pmt::to_long(v_id[0].value));
-            //long id_off = v_id[0].offset;
-            //printf("%s found N_id_2 = %i\t id_off = %ld\n",name().c_str(), d_N_id_2, id_off);
+            //printf("%s found N_id_2 = %i\t id_off = %ld\n",name().c_str(), d_N_id_2, v_id[0].offset);
         }
         
         pmt::pmt_t slot_key=pmt::string_to_symbol("slot");  

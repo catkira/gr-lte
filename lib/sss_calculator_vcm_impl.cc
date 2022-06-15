@@ -132,9 +132,10 @@ namespace gr {
             long offset = 0;
             std::vector <gr::tag_t> v_off;
             get_tags_in_range(v_off,0,nitems_read(0),nitems_read(0)+1,d_key_offset);
-            if (v_off.size() > 0){
+            if (v_off.size() > 0)
                 offset = pmt::to_long(v_off[0].value);
-            }
+            else
+                printf("warning: no offset tag detected!\n");
             
             d_sss_pos = info.pos;
             

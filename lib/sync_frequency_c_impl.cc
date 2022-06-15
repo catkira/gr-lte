@@ -137,7 +137,8 @@ namespace gr {
         d_f_av=d_f_av - (0.01 * f_off);
 
         //f_vec.push_back(d_f_av);
-
+        //printf("frequency offset: %f\n", d_f_av);
+        
         (*d_sig).set_frequency((-1)*double(d_f_av) );
     }
 
