@@ -37,7 +37,7 @@ namespace gr {
         void max_pos(float &max, int &pos, gr_complex *x,gr_complex *y, int len); //finds maximum of one correlation
 
         inline void set_half_frame_start();
-        inline int calculate_half_frame_start(long pos);
+        inline long calculate_half_frame_start(long pos);
         inline void extract_pss(gr_complex *chu, const gr_complex *in);
         // attributes for correlation
         correlator *d_correlator;

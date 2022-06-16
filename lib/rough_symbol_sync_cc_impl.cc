@@ -20,7 +20,7 @@ namespace gr {
      * The private constructor
      */
     rough_symbol_sync_cc_impl::rough_symbol_sync_cc_impl(int fftl, int vlen, std::string name)
-      : gr::sync_block("rough_symbol_sync_cc",
+      : gr::sync_block(name,
                 gr::io_signature::make(1, 1, sizeof(input_type) * vlen),
                 gr::io_signature::make(1, 1, sizeof(output_type) * vlen)),
                 d_fftl(fftl),
@@ -45,6 +45,9 @@ namespace gr {
      */
     rough_symbol_sync_cc_impl::~rough_symbol_sync_cc_impl()
     {
+        fftwf_free(d_cp0);
+        fftwf_free(d_cp1);
+        fftwf_free(d_res);        
     }
 
     void rough_symbol_sync_cc_impl::forecast(int noutput_items, 

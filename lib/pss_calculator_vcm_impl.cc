@@ -95,11 +95,11 @@ namespace gr {
             //Do things if new max is found!
             if(changed){
                 d_lock_count = 0; // reset lock count!
-                int half_frame_start = calculate_half_frame_start(nir+i);
+                long half_frame_start = calculate_half_frame_start(nir+i);
 
                 if(d_half_frame_start != half_frame_start ){
                     if(!d_is_locked){
-                        printf("\n%s NEW half_frame_start = %ld\tN_id_2 = %i\tcorr_val = %f\n\n",name().c_str(), d_half_frame_start, d_N_id_2, d_corr_val );
+                        printf("\n%s NEW half_frame_start = %ld\tN_id_2 = %i\tcorr_val = %f\n\n",name().c_str(), half_frame_start, d_N_id_2, d_corr_val );
                         //~ (*d_tag).set_N_id_2(d_N_id_2); // only set a new Cell ID number if not yet locked!
                         message_port_pub(d_port_N_id_2, pmt::from_long((long)d_N_id_2));
                         d_half_frame_start = half_frame_start;
@@ -235,13 +235,14 @@ namespace gr {
 
     //convenience method for better readability
     //get tag from stream --> get tag.offset --> do some calculation --> return half_frame_start
-    int
+    long
     pss_calculator_vcm_impl::calculate_half_frame_start(long pos)
     {
         std::vector <gr::tag_t> v_off;
         get_tags_in_range(v_off, 0, pos, pos+1);
+        printf("num tags %d, %ld",v_off.size(), pmt::to_long(v_off[0].value));
         long offset = pmt::to_long(v_off[0].value) - (6*d_fftl+5*d_cpl+d_cpl0);
-        return int( offset%(10*d_slotl) );
+        return offset%(10*d_slotl);
     }
 
     //convenience method for better readability
