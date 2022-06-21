@@ -33,7 +33,8 @@ namespace gr {
                 d_samp_num(0),
                 d_work_call(0)
     {
-        d_buffer = (gr_complex*)fftwf_malloc(sizeof(gr_complex)*d_slotl);        
+        d_buffer = (gr_complex*)fftwf_malloc(sizeof(gr_complex)*d_slotl); 
+        printf("slotl = %d\n", d_slotl);
     }
 
     /*
@@ -62,13 +63,14 @@ namespace gr {
         for (std::vector <gr::tag_t>::size_type m = 0 ; m < v.size() ; m++){
             int offset = int((v[m].offset)%slotl);
             if( offset != d_offset){
-//                printf("%s\tASYNC!\tnew offset = %i\told offset = %i\tsamp_num = %i\n", name().c_str(), offset, d_offset, samp_num);
+                printf("%s\tASYNC!\tnew offset = %i\told offset = %i\tsamp_num = %i\n", name().c_str(), offset, d_offset, samp_num);
                 d_offset = offset;
                 samp_num = slotl-( (v[m].offset-nitems_read(0))%slotl ) ;
             }
         }
 
         int nout = noutput_items;
+        //printf("sync_frequency_c--> received %d items\n", nout);
         for(int i = 0 ; i < noutput_items ; i++){
             if(samp_num+nout > slotl){
                 memcpy(d_buffer+samp_num, in, sizeof(gr_complex)*(slotl-samp_num) );
@@ -101,6 +103,7 @@ namespace gr {
         return noutput_items;
     }
     
+    // BM: this method probably only works for small frequency offsets! 20kHz is likely too much!
     void
     sync_frequency_c_impl::calc_f_off_av(){
         int fftl = d_fftl;
@@ -113,10 +116,15 @@ namespace gr {
         // The next few lines are predestined for volk usage / performance improvements.
         gr_complex corr_val[7] = {0};
         corr_val[0] = corr (res, d_buffer, d_buffer+cpl0, cpl0);
+        //printf("a\n");
 
         for(int i = 0 ; i < 6; i++){
+            //int start = fftl+cpl0+i*(fftl+cpl);
+            //int end = fftl+cpl0+i*(fftl+cpl)+fftl;
+            //printf("a %d  start_cp = %d end_cp = %d cp_len = %d\n",i,start,end,cpl);
             corr_val[i+1] = corr(res, d_buffer+fftl+cpl0+i*(fftl+cpl), d_buffer+fftl+cpl0+i*(fftl+cpl)+fftl, cpl );
         }
+        //printf("b\n");
 
         //find maximum correlation
         float max = abs(corr_val[0]);
@@ -132,12 +140,14 @@ namespace gr {
             }
         }
 
+        //printf("c\n");
+
         // The next line does the fancy stuff -> calculate the frequency offset.
         float f_off = arg(corr_val[pos]) * float(float(d_samp_rate)/(2*M_PI*float(d_fftl) ) );
         d_f_av=d_f_av - (0.01 * f_off);
 
         //f_vec.push_back(d_f_av);
-        //printf("frequency offset: %f\n", d_f_av);
+        printf("frequency offset: %f current correction frequency: %f\n", f_off, d_f_av);
         
         (*d_sig).set_frequency((-1)*double(d_f_av) );
     }
@@ -145,16 +155,21 @@ namespace gr {
     gr_complex
     sync_frequency_c_impl::corr(gr_complex *res, gr_complex *x, gr_complex *y, int len)
     {
-        volk_32fc_conjugate_32fc_a(y, y, len);
-        volk_32fc_x2_multiply_32fc_a(res, x, y, len);
+        //printf("x1\n");
+        volk_32fc_conjugate_32fc(y, y, len);
+        //printf("x1a\n");
+        volk_32fc_x2_multiply_32fc(res, x, y, len);
+        //printf("x1b\n");
 
         float* i_vector = (float*)fftwf_malloc(sizeof(float)*len);
         float* q_vector = (float*)fftwf_malloc(sizeof(float)*len);
-        volk_32fc_deinterleave_32f_x2_a(i_vector, q_vector, res, len);
+        //printf("x2\n");
+        volk_32fc_deinterleave_32f_x2(i_vector, q_vector, res, len);
         float i_result = 0.0f;
         float q_result = 0.0f;
-        volk_32f_accumulator_s32f_a(&i_result, i_vector, len);
-        volk_32f_accumulator_s32f_a(&q_result, q_vector, len);
+        //printf("x3\n");        
+        volk_32f_accumulator_s32f(&i_result, i_vector, len);
+        volk_32f_accumulator_s32f(&q_result, q_vector, len);
 
         return gr_complex(i_result, q_result);
     }

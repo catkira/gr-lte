@@ -49,12 +49,12 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '2048'
+    value: '256'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [265, 6]
+    coordinate: [272, 4.0]
     rotation: 0
     state: enabled
 - name: frame_key
@@ -66,7 +66,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [485, 7]
+    coordinate: [496, 12.0]
     rotation: 0
     state: enabled
 - name: interp_val
@@ -118,9 +118,45 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1192, 384.0]
+    coordinate: [1192, 480.0]
     rotation: 0
-    state: enabled
+    state: disabled
+- name: blocks_add_const_vxx_0
+  id: blocks_add_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '-127'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [680, 116.0]
+    rotation: 0
+    state: disabled
+- name: blocks_add_const_vxx_1
+  id: blocks_add_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '-127'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [680, 172.0]
+    rotation: 0
+    state: disabled
 - name: blocks_add_xx_0
   id: blocks_add_xx
   parameters:
@@ -136,7 +172,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [976, 176.0]
+    coordinate: [1016, 352.0]
     rotation: 0
     state: disabled
 - name: blocks_deinterleave_0
@@ -155,25 +191,42 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [808, 176.0]
+    coordinate: [848, 352.0]
     rotation: 0
     state: disabled
-- name: blocks_file_sink_0
-  id: blocks_file_sink
+- name: blocks_deinterleave_1
+  id: blocks_deinterleave
   parameters:
     affinity: ''
     alias: ''
-    append: 'False'
+    blocksize: '1'
     comment: ''
-    file: tmp.dat
-    type: complex
-    unbuffered: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_streams: '2'
+    type: byte
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [320, 760.0]
+    coordinate: [328, 160.0]
+    rotation: 0
+    state: disabled
+- name: blocks_float_to_complex_0
+  id: blocks_float_to_complex
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1024, 136.0]
     rotation: 0
     state: disabled
 - name: blocks_head_0_0
@@ -191,7 +244,94 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [848, 116.0]
+    coordinate: [888, 292.0]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: 8E-3
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [840, 116.0]
+    rotation: 0
+    state: disabled
+- name: blocks_multiply_const_vxx_1
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: 8e-3
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [840, 172.0]
+    rotation: 0
+    state: disabled
+- name: blocks_null_sink_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [112, 416.0]
+    rotation: 0
+    state: enabled
+- name: blocks_null_sink_0_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 808.0]
+    rotation: 0
+    state: disabled
+- name: blocks_null_sink_0_0_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [320, 288.0]
     rotation: 0
     state: disabled
 - name: blocks_throttle_0
@@ -210,7 +350,37 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1104, 116.0]
+    coordinate: [1144, 292.0]
+    rotation: 0
+    state: disabled
+- name: blocks_uchar_to_float_0
+  id: blocks_uchar_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 120.0]
+    rotation: 0
+    state: disabled
+- name: blocks_uchar_to_float_1
+  id: blocks_uchar_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [488, 176.0]
     rotation: 0
     state: disabled
 - name: lte_bch_decoder_0
@@ -225,9 +395,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [984, 432.0]
+    coordinate: [984, 528.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: lte_channel_estimator_0
   id: lte_channel_estimator
   parameters:
@@ -243,9 +413,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 388.0]
+    coordinate: [488, 484.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: lte_cp_ffo_sync_0
   id: lte_cp_ffo_sync
   parameters:
@@ -259,7 +429,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [96, 300.0]
+    coordinate: [72, 356.0]
     rotation: 180
     state: enabled
 - name: lte_ofdm_demodulator_0
@@ -277,9 +447,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [344, 596.0]
+    coordinate: [344, 692.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: lte_pbch_decoder_0
   id: lte_pbch_decoder
   parameters:
@@ -293,9 +463,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [792, 377]
+    coordinate: [792, 472.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: lte_pcfich_decoder_0
   id: lte_pcfich_decoder
   parameters:
@@ -310,9 +480,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [920, 576.0]
+    coordinate: [920, 672.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: lte_pss_sync_0
   id: lte_pss_sync
   parameters:
@@ -326,7 +496,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [296, 300.0]
+    coordinate: [296, 396.0]
     rotation: 180
     state: enabled
 - name: lte_sss_sync_0
@@ -345,9 +515,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [120, 395]
+    coordinate: [120, 492.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: pre_blocks_file_source_0
   id: blocks_file_source
   parameters:
@@ -355,8 +525,8 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: /mnt/d/git/gr-lte/examples/recording.dat
-    length: '307200000'
+    file: /mnt/d/git/gr-lte/examples/recording3.840.dat
+    length: '100000'
     maxoutbuf: '0'
     minoutbuf: '0'
     offset: '0'
@@ -367,9 +537,31 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [496, 132.0]
+    coordinate: [504, 236.0]
     rotation: 0
     state: enabled
+- name: pre_blocks_file_source_0_0
+  id: blocks_file_source
+  parameters:
+    affinity: ''
+    alias: ''
+    begin_tag: pmt.PMT_NIL
+    comment: ''
+    file: /mnt/d/f1860_s1.92_g0_1s_strong.bin
+    length: '3840128'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    repeat: 'True'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [104, 156.0]
+    rotation: 0
+    state: disabled
 - name: pre_rational_resampler_xxx_0
   id: rational_resampler_xxx
   parameters:
@@ -387,7 +579,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1272, 92.0]
+    coordinate: [1312, 268.0]
     rotation: 0
     state: disabled
 - name: sync_lte_rough_symbol_sync_cc_0
@@ -405,33 +597,44 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [488, 284.0]
+    coordinate: [488, 380.0]
     rotation: 180
     state: enabled
 
 connections:
 - [MIB, N_ant, lte_pcfich_decoder_0, N_ant]
+- [blocks_add_const_vxx_0, '0', blocks_multiply_const_vxx_0, '0']
+- [blocks_add_const_vxx_1, '0', blocks_multiply_const_vxx_1, '0']
 - [blocks_add_xx_0, '0', blocks_head_0_0, '0']
 - [blocks_add_xx_0, '0', blocks_throttle_0, '0']
 - [blocks_deinterleave_0, '0', blocks_add_xx_0, '1']
 - [blocks_deinterleave_0, '1', blocks_add_xx_0, '0']
+- [blocks_deinterleave_1, '0', blocks_uchar_to_float_0, '0']
+- [blocks_deinterleave_1, '1', blocks_uchar_to_float_1, '0']
+- [blocks_float_to_complex_0, '0', sync_lte_rough_symbol_sync_cc_0, '0']
 - [blocks_head_0_0, '0', blocks_throttle_0, '0']
 - [blocks_head_0_0, '0', sync_lte_rough_symbol_sync_cc_0, '0']
+- [blocks_multiply_const_vxx_0, '0', blocks_float_to_complex_0, '0']
+- [blocks_multiply_const_vxx_1, '0', blocks_float_to_complex_0, '1']
 - [blocks_throttle_0, '0', pre_rational_resampler_xxx_0, '0']
 - [blocks_throttle_0, '0', sync_lte_rough_symbol_sync_cc_0, '0']
+- [blocks_uchar_to_float_0, '0', blocks_add_const_vxx_0, '0']
+- [blocks_uchar_to_float_1, '0', blocks_add_const_vxx_1, '0']
 - [lte_bch_decoder_0, '0', MIB, '0']
 - [lte_bch_decoder_0, '1', MIB, '1']
 - [lte_channel_estimator_0, '0', lte_pbch_decoder_0, '0']
 - [lte_channel_estimator_0, '0', lte_pcfich_decoder_0, '0']
 - [lte_channel_estimator_0, '1', lte_pbch_decoder_0, '1']
 - [lte_channel_estimator_0, '1', lte_pcfich_decoder_0, '1']
+- [lte_cp_ffo_sync_0, '0', blocks_null_sink_0, '0']
 - [lte_cp_ffo_sync_0, '0', lte_sss_sync_0, '0']
 - [lte_ofdm_demodulator_0, '0', lte_channel_estimator_0, '0']
 - [lte_ofdm_demodulator_0, '0', lte_pbch_decoder_0, '2']
 - [lte_ofdm_demodulator_0, '0', lte_pcfich_decoder_0, '2']
 - [lte_pbch_decoder_0, '0', lte_bch_decoder_0, '0']
+- [lte_pss_sync_0, '0', blocks_null_sink_0_0_0, '0']
 - [lte_pss_sync_0, '0', lte_cp_ffo_sync_0, '0']
-- [lte_sss_sync_0, '0', blocks_file_sink_0, '0']
+- [lte_sss_sync_0, '0', blocks_null_sink_0_0, '0']
 - [lte_sss_sync_0, '0', lte_ofdm_demodulator_0, '0']
 - [lte_sss_sync_0, cell_id, lte_channel_estimator_0, cell_id]
 - [lte_sss_sync_0, cell_id, lte_pbch_decoder_0, cell_id]
@@ -439,6 +642,7 @@ connections:
 - [pre_blocks_file_source_0, '0', blocks_deinterleave_0, '0']
 - [pre_blocks_file_source_0, '0', blocks_head_0_0, '0']
 - [pre_blocks_file_source_0, '0', sync_lte_rough_symbol_sync_cc_0, '0']
+- [pre_blocks_file_source_0_0, '0', blocks_deinterleave_1, '0']
 - [pre_rational_resampler_xxx_0, '0', sync_lte_rough_symbol_sync_cc_0, '0']
 - [sync_lte_rough_symbol_sync_cc_0, '0', lte_pss_sync_0, '0']
 

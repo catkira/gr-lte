@@ -89,7 +89,7 @@ namespace gr {
         int coarse_pos = 0;
         gr_complex it_val = 0;
 
-        for(int i = 0; i < d_cpl*15-stp; i+=stp){  
+        for(int i = 0; i < d_cpl*15-stp; i+=stp){  // BM: produce 130 samples (assuming fftl=128)
       //for(int i = 0; i < d_fftl+d_cpl*16 - (d_fftl+d_cpl+stp); i+=stp){
 
             memcpy(d_cp0,in+i*d_vlen          ,sizeof(gr_complex)*d_cpl*d_vlen);
@@ -126,10 +126,9 @@ namespace gr {
                     fine_pos = i;
                     if(d_corr_val < abs(val) ){
                         d_corr_val = abs(val);
-                        //long abs_pos = nitems_read(0) + fine_pos;
                         d_sym_pos = (nitems_read(0) + fine_pos)%d_slotl;
                         //printf("%s\tfine corr sym_pos = %ld\n",name().c_str(), d_sym_pos );
-                        //printf("corr_val = %f\tsym_pos = %ld\tabs_pos = %ld\n", d_corr_val, d_sym_pos, abs_pos);
+                        //printf("corr_val = %f\tsym_pos = %ld\tabs_pos = %ld\n", d_corr_val, d_sym_pos, nitems_read(0) + fine_pos);
                     }
                 }
             }
@@ -143,7 +142,8 @@ namespace gr {
 
         // actually the next block doesn't care about the exact tag position. Only the value and key are important.
         memcpy(out, in, sizeof(gr_complex)*nout*d_vlen );
-        add_item_tag(0,nitems_read(0)+5,d_key, pmt::from_long(d_sym_pos),d_tag_id);
+        add_item_tag(0,nitems_read(0)+5,d_key, pmt::from_long(d_sym_pos),d_tag_id); // BM: d_sym_pos is only updated, if a new maximum has been found
+        printf("add tag symbol_start_pos %ld, produce %d samples\n",d_sym_pos, nout);
         d_work_call++;
         // Tell runtime system how many output items we produced.
         return nout;

@@ -112,25 +112,24 @@ namespace gr {
         // generate output
         int consumed_items = 0;
         int nout = 0;
-        long pss_pos = (d_ass_half_frame_start+(6*d_fftl+5*d_cpl+d_cpl0)-4 )%(10*d_slotl);
-        long abs_pos = nir;
-        int mod_pss = abs( (int(abs_pos-(pss_pos) ))%(10*d_slotl) );
+        // pss can be found in last ofdm symbol of slot => fftl + cpl0 + 5*(fftl + cpl)
+        long pss_pos = (d_ass_half_frame_start+(6*d_fftl+5*d_cpl+d_cpl0)-4 )%(10*d_slotl); // BM: all consts, why -4 ??
+        //long abs_pos = nir;
+        //int mod_pss = abs( (int(abs_pos-(pss_pos) ))%(10*d_slotl) ); // perform mod to get location of pss in last half frame
         for(int i = 0 ; i+d_syml0 < nin ; i++){
-            abs_pos = nir+long(i); // calculate new absolute sample position
-            mod_pss = abs( (int(abs_pos-(pss_pos) ))%(10*d_slotl) );
-            if(d_ass_half_frame_start < 10* d_slotl && mod_pss < 10 ){
+            long abs_pos = nir+long(i); // calculate new absolute sample position
+            int mod_pss = abs( (int(abs_pos-(pss_pos) ))%(10*d_slotl) );  // perform mod to get location of pss in last half frame
+            if(d_ass_half_frame_start < 10* d_slotl && mod_pss < 10 ){ // BM: "d_ass_half_frame_start < 10* d_slotl" is always true, what is "mod_pss < 10" ??
                 produce_output(out, in+i, abs_pos, nout);
-                consumed_items = i+1;
-                //printf("%s--> generate output half_frame_start\tmod_pss = %i\tabs_pos = %ld\t modulo %ld\n", name().c_str(), mod_pss, abs_pos, pss_pos%offset );
+                printf("%s--> generate output half_frame_start\tmod_pss = %i\tabs_pos = %ld\t modulo %ld\n", name().c_str(), mod_pss, abs_pos, pss_pos%offset );
             }
             else if(is_locked){//For now step over all samples
-                consumed_items = i+1;
             }
-            else if(  (((abs(abs_pos-offset))%d_slotl)-d_syml0)%d_syml == 0){
+            else if((( (abs(abs_pos-offset)) % d_slotl) - d_syml0) % d_syml == 0){
                 produce_output(out, in+i, abs_pos, nout);
-                i += (d_syml-50);
-                consumed_items = i+1; // +1 because i is initialized with 0
+                //i += (d_syml-50); // BM: what is this magic number -50 ??
             }
+            consumed_items = i+1; // +1 because i is initialized with 0
 
             if(nout == noutput_items){break;}// very important! break if maximum number of output vectors are produced!
         }

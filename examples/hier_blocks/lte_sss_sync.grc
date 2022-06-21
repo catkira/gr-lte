@@ -168,7 +168,6 @@ blocks:
     key_offset: offset_marker
     maxoutbuf: '0'
     minoutbuf: '0'
-    name: ''
   states:
     bus_sink: false
     bus_source: false

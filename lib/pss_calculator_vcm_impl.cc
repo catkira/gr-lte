@@ -240,7 +240,7 @@ namespace gr {
     {
         std::vector <gr::tag_t> v_off;
         get_tags_in_range(v_off, 0, pos, pos+1);
-        printf("num tags %d, %ld",v_off.size(), pmt::to_long(v_off[0].value));
+        printf("num found symbol_offset_tag %ld", pmt::to_long(v_off[0].value));
         long offset = pmt::to_long(v_off[0].value) - (6*d_fftl+5*d_cpl+d_cpl0);
         return offset%(10*d_slotl);
     }
