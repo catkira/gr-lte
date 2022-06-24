@@ -104,7 +104,7 @@ namespace gr {
                         message_port_pub(d_port_N_id_2, pmt::from_long((long)d_N_id_2));
                         d_half_frame_start = half_frame_start;
                     }
-                    else if( abs(d_half_frame_start-half_frame_start) < 2 ){ //only moves by one sample in tracking mode!
+                    else if( abs(d_half_frame_start-half_frame_start) < 2 ){ //only moves by one sample in tracking mode!  BM: why < 2 ???
                         if( d_half_frame_start < half_frame_start ){d_half_frame_start++;}
                         else{d_half_frame_start--;}
                     }
