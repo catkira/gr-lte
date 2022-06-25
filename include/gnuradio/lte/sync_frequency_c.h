@@ -26,7 +26,7 @@ namespace gr {
        * class. lte::sync_frequency_c::make is the public interface for
        * creating new instances.
        */
-      static sptr make(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, std::string name = "sync_frequency_c");
+      static sptr make(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, float known_f_offset, std::string name = "sync_frequency_c");
     };
 
   } // namespace lte

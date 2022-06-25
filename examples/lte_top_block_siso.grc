@@ -299,7 +299,7 @@ blocks:
     bus_structure: null
     coordinate: [112, 416.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: blocks_null_sink_0_0
   id: blocks_null_sink
   parameters:
@@ -316,7 +316,7 @@ blocks:
     bus_structure: null
     coordinate: [280, 808.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_null_sink_0_0_0
   id: blocks_null_sink
   parameters:
@@ -423,6 +423,7 @@ blocks:
     alias: ''
     comment: ''
     fftlen: fftlen
+    known_f_offset: '-20000'
     maxoutbuf: '0'
     minoutbuf: '0'
   states:
@@ -517,7 +518,7 @@ blocks:
     bus_structure: null
     coordinate: [120, 492.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: pre_blocks_file_source_0
   id: blocks_file_source
   parameters:
@@ -526,7 +527,7 @@ blocks:
     begin_tag: pmt.PMT_NIL
     comment: ''
     file: /mnt/d/git/gr-lte/examples/recording3.840.dat
-    length: '100000'
+    length: '300000'
     maxoutbuf: '0'
     minoutbuf: '0'
     offset: '0'

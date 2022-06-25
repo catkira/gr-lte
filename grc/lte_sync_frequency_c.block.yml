@@ -3,7 +3,7 @@ label: CP FFO Calculator
 category: '[Lte]'
 templates:
   imports: from gnuradio import lte
-  make: lte.sync_frequency_c(getattr(self, ${sig}), ${fftl}, ${name})
+  make: lte.sync_frequency_c(getattr(self, ${sig}), ${fftl}, ${known_f_offset}, ${name})
 parameters:
 - id: sig
   label: Sig
@@ -11,6 +11,9 @@ parameters:
 - id: fftl
   label: Fftl
   dtype: int
+- id: known_f_offset
+  label: known frequency offset
+  dtype: float
 - id: name
   label: Name
   default: '${id}'

@@ -8,17 +8,17 @@ namespace gr {
 
     using input_type = gr_complex;
     sync_frequency_c::sptr
-    sync_frequency_c::make(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, std::string name)
+    sync_frequency_c::make(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, float known_f_offset, std::string name)
     {
       return gnuradio::make_block_sptr<sync_frequency_c_impl>(
-        sig, fftl, name);
+        sig, fftl, known_f_offset, name);
     }
 
 
     /*
      * The private constructor
      */
-    sync_frequency_c_impl::sync_frequency_c_impl(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, std::string name)
+    sync_frequency_c_impl::sync_frequency_c_impl(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, float known_f_offset, std::string name)
       : gr::sync_block(name,
                 gr::io_signature::make(1, 1, sizeof(input_type)),
                 gr::io_signature::make(0, 0, 0)),
@@ -29,8 +29,9 @@ namespace gr {
                 d_slotl(7*fftl+6*d_cpl+d_cpl0),
                 d_samp_rate(d_slotl/0.0005),
                 d_offset(0),
-                d_f_av(0.0),
+                d_f_av(0),
                 d_samp_num(0),
+                d_known_f_offset(known_f_offset),
                 d_work_call(0)
     {
         d_buffer = (gr_complex*)fftwf_malloc(sizeof(gr_complex)*d_slotl); 
@@ -149,7 +150,7 @@ namespace gr {
         //f_vec.push_back(d_f_av);
         printf("frequency offset: %f current correction frequency: %f\n", f_off, d_f_av);
         
-        (*d_sig).set_frequency((-1)*double(d_f_av) );
+        (*d_sig).set_frequency((-1)*double(d_f_av + d_known_f_offset) );
     }
 
     gr_complex

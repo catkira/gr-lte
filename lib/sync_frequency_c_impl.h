@@ -20,6 +20,7 @@ namespace gr {
 
         float d_f_av;
         int d_samp_num;
+        float d_known_f_offset;
         int d_work_call;
 
         //methods for further calculations
@@ -28,7 +29,7 @@ namespace gr {
         gr_complex corr(gr_complex *res, gr_complex *x, gr_complex *y, int len);
 
      public:
-      sync_frequency_c_impl(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, std::string name);
+      sync_frequency_c_impl(std::shared_ptr<gr::analog::sig_source<gr_complex>> &sig, int fftl, float known_f_offset, std::string name);
       ~sync_frequency_c_impl();
 
       // Where all the action really happens

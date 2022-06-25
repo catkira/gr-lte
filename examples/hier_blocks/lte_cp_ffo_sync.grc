@@ -99,6 +99,23 @@ blocks:
     coordinate: [254, 20]
     rotation: 0
     state: enabled
+- name: known_f_offset
+  id: parameter
+  parameters:
+    alias: ''
+    comment: ''
+    hide: none
+    label: Known frequency offset
+    short_id: ''
+    type: intx
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [56, 188.0]
+    rotation: 0
+    state: enabled
 - name: pad_sink_0
   id: pad_sink
   parameters:
@@ -144,6 +161,7 @@ blocks:
     alias: ''
     comment: ''
     fftl: fftlen
+    known_f_offset: known_f_offset
     name: ${id}
     sig: '"sync_ffofrac_sig"'
   states:

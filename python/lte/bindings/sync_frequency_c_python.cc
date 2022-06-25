@@ -14,7 +14,7 @@
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
 /* BINDTOOL_HEADER_FILE(sync_frequency_c.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(9e9e96d395f533b3e2732971c5751592)                     */
+/* BINDTOOL_HEADER_FILE_HASH(8b30b131f9351ecbe012ae5105a5efa3)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -39,6 +39,7 @@ void bind_sync_frequency_c(py::module& m)
         .def(py::init(&sync_frequency_c::make),
            py::arg("sig"),
            py::arg("fftl"),
+           py::arg("known_f_offset"),
            py::arg("name") = "sync_frequency_c",
            D(sync_frequency_c,make)
         )
